@@ -1,7 +1,7 @@
 <?php
 
-//$conexion = mysqli_connect("localhost", "root", "", "pack","3307");
-$conexion = mysqli_connect("localhost", "root", "", "pack");
+$conexion = mysqli_connect("localhost", "root", "", "pack","3307");
+//$conexion = mysqli_connect("localhost", "root", "", "pack");
 
 /*
 if(mysqli_connect_errno()){

@@ -1,14 +1,4 @@
-<script type="text/javascript">
-function AlertIt(id) {
-/*var answer = confirm ("Please click on OK to continue.")
-if (answer)*/
 
-let guiaAWB=prompt('Introduzca el número de guía:')   
-console.log (id)             
-window.location='reportes/pdfENA.php?id='+id+"&" + "guiaAWB=" + guiaAWB
-
-}
-</script>
 
 <?php
 include "session.php";
@@ -23,8 +13,10 @@ $where = "";
 if (isset($_POST["enviar-pais"])) {
   $cod_origen = $_POST['cod_origen'];
   $cod_destino = $_POST['cod_destino'];
-  if (!empty($cod_origen) and !empty($cod_destino)) { // es OBLIGARORIO que señecciones un origen Y destino
-    $where = "WHERE cod_origen LIKE '%$cod_origen%' and cod_destino LIKE '%$cod_destino%' and estado_id='1'";
+  if (!empty($cod_origen) and !empty($cod_destino)) { // es OBLIGARORIO que selecciones un origen Y destino
+   // $where = "WHERE cod_origen LIKE '%$cod_origen%' and cod_destino LIKE '%$cod_destino%' and estado_id='1' GROUP BY electronico";
+    $where = "WHERE cod_origen ='$cod_origen' and cod_destino ='$cod_destino' and estado_id='1' ORDER BY electronico";
+
   }
   /*if (!empty($cod_origen) and empty($cod_destino)) {
       $where = "WHERE cod_origen LIKE '%$cod_origen%'";
@@ -109,8 +101,9 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
           <th scope="col">Destinatario</th>
           <th scope="col">Destino</th>
           <th scope="col">Fecha Embarque</th>
-          <th scope="col">Volumen</th>
-          <th scope="col">Empaquetado</th>
+          <th scope="col">Piezas</th>
+          <th scope="col">Peso</th>
+          <th scope="col">Electrónicos</th>
 
         </tr>
       </thead>
@@ -158,8 +151,9 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
              <?php }
               ?>
               <td><?php echo $row['fecha_emb']; ?></td>
+              <td><?php echo $row['cantidad_bulto']; ?></td>
               <td><?php echo $row['peso_volumetrico']; ?></td>
-              <td><?php echo $row['empaquetado']; ?></td>
+              <td><?php echo $row['electronico']; ?></td>
 
           </tr>
         <?php }?>
@@ -175,8 +169,14 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
           </div>
           <div class="col-md-4 div-nuevo">
               <label>SHIPPER</label>
-              <input type="text" name="expedidor" id="expedidor" class='form-control' maxlength="25" required ></input>
-          </div>
+              <select class="form-select" aria-label="Default select example" id="expedidor" name="expedidor">
+                <option selected>Seleccione:</option>
+                <option value="FERIBAN S.A. Aeropuerto Int´l. de Carrasco TCU of 116 Montevideo - Uruguay">Ferriban</option>
+                <option value="DOX">otro</option>
+                <option value="ENA">otro</option>
+                </select>
+         
+            </div>
           <div class="col-md-4 div-nuevo">
               <label>CONSIGNEE</label>
               <input type="text" name="consignatario" id="consignatario" class='form-control' maxlength="25" required ></input>

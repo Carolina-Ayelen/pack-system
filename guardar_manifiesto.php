@@ -29,14 +29,14 @@ if(isset($_POST['manifiesto'])){//Validacion de envio de formulario
                     $resultado = mysqli_query($conexion, $query);  
             
                     if(!$resultado){
-                        die("Query failed");
+                        die("Query failed di error insetando en manif embarq ");
                     }
                     else{
 
                         $query = "UPDATE guia_embarque set estado_id = '2' WHERE id_guia = $id_guia";
                         mysqli_query($conexion, $query);
                         if (!$resultado) {
-                            die("Query failed");
+                            die("Query failed modificando la guia");
                         } 
                     }
             

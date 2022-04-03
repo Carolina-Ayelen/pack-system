@@ -3,9 +3,9 @@ function AlertIt(id) {
 /*var answer = confirm ("Please click on OK to continue.")
 if (answer)*/
 
-let guiaAWB=prompt('Introduzca el número de guía:')   
-console.log (id)             
+let guiaAWB=prompt('Introduzca el número de guía:')               
 window.location='reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB
+window.location ='editar-guia-noacompañada?id='+id+"&" + "guiaAWB=" + guiaAWB
 
 }
 </script>
