@@ -98,28 +98,35 @@ while ($row = mysqli_fetch_array($result)) {?>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="cliente-cheque.php">
+        <a class="nav-link" href="guia-cerrado.php">
           <span data-feather="file-text"></span>
-          Embarques por cliente
+          Embarques Cerrados
         </a>
       </li>
+    </ul>  
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-      <span>Facturación</span>
+      <span>Manifiesto</span>
       <a class="link-secondary" href="#" aria-label="Add a new report">
         <span data-feather="plus-circle"></span>
       </a>
     </h6>
     <ul class="nav flex-column mb-2">
-     <!-- <li class="nav-item">
-        <a class="nav-link" href="nuevo-cheque.php">
+     <li class="nav-item">
+        <a class="nav-link" href="nuevo_manifiesto.php">
           <span data-feather="file-text"></span>
-          Nuevo Factura
+          Nuevo Manifiesto
         </a>
-      </li>-->
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href="cheques.php">
+        <a class="nav-link" href="manifiesto.php">
           <span data-feather="file-text"></span>
-          Registro de Facturas
+          Registro de Manifiestos
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="manifiesto-cerrado.php">
+          <span data-feather="file-text"></span>
+          Manifiestos Cerrados
         </a>
       </li>
      <!-- <li class="nav-item">
