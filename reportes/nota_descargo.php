@@ -77,70 +77,36 @@ if (isset($_GET['id'])) {
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h4 style="text-align:center"><u> Declaración General de Seguridad</u></h4>
+            <h4 style="text-align:center"><u>NOTA DE DESCARGO DE RESPONSABILIDAD</u></h4>
             <br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6">
-            <p>Señores</p>
-            <p><strong>Copa Airlines/Feriban</strong></p>
-        </div>
-        <div class="col-xs-6">
-            <p>Montevideo, <?php 
-            echo date("F") . " " . date("m") . ", " . date("Y"); ?>
-            </p> 
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-6">
-            <p><u> Presente</u></p>
-            <p>Mediante la presente, yo </p>
-            <?php
-                $queryPersona = "SELECT * FROM personas WHERE id_persona =$remitente";
-                $resultadoPersona= mysqli_query($conexion, $queryPersona);
-                while ($rowPersona = $resultadoPersona->fetch_assoc()) {?>
-                    <p>CI Nro.: <?php echo $rowPersona['dni'];?></p>
-                    <?php
-                } 
-            ?>
-        </div>
-        <div class="col-xs-6">
-            <p>Ref.    Nro.   Guía / <?php $length = 5;
+            <p>Por este medio certificamos que deslindamos de cualquier responsabilidad, sobre valor total, de los artículos embarcados bajo la guía <?php $length = 5;
               $guia = substr(str_repeat(0, $length).$row['id_guia'], - $length);
-              echo $guia; ?> </p>
+              echo $guia; ?> a los Señores de Copa Airlines Courier, dado que los productos declarados están fuera del cuadro de artículos permitidos para el transporte por esta empresa o presentan un embalaje inadecuado para su transporte.</p>
+            <br>
             <?php
                 $queryPersona = "SELECT * FROM personas WHERE id_persona =$remitente";
                 $resultadoPersona= mysqli_query($conexion, $queryPersona);
                 while ($rowPersona = $resultadoPersona->fetch_assoc()) {?>
-                    <p><?php echo $rowPersona['nombre'] . " " . $rowPersona['apellidos']; ?></p>
+                    <p>Persona: <?php echo $rowPersona['nombre'] . " " . $rowPersona['apellidos']; ?></p>
                     <?php
                 } 
             ?>
-        </div>
-    </div> 
-    <div style="border-top:black 1px solid">
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-xs-12">
-            <p>“Certifico que este embarque no contiene ningún producto explosivo, mercancías peligrosas o aparato destructivo <strong> NO AUTORIZADO, ASI COMO MERCANCIAS ILEGALES.</strong> Estoy consciente de que este embarque está sujeto a los respectivos controles de seguridad Aérea y otras Regulaciones Gubernamentales: Asimismo, soy consciente que esta declaración y firma original así como el resto de los documentos de este embarque se mantendrán en archivo hasta que el embarque sea entregado al consignatario.”</p>
-            <p>“Soy consciente y acepto que dada la emergencia sanitaria, existen retrasos en los envíos, siendo indefinido el arribo de la misma a su destino final”</p>
-            <p>“Adicionalmente autorizo al personal de Feriban S.A. a realizar cualquier gestión en nuestro nombre ante la Dirección de Aduanas del Uruguay”</p>
-            <br>
-            <br>
-            <p>Firma/Signature   y   Sello/Seal</p>
-            <br>
-            <p><strong> Nota:</strong> El firmante debe adjuntar a la presente fotocopia de un documento de identidad con su fotografía y presentar el original para la verificación de su firma.</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-xs-12" style="text-align:center; margin:0px">
-        <br>
-            <p style="color:#767676"> FERIBAN S.A. <br>Aeropuerto Int´l. de Carrasco<br>TCU of 116<br>Tel./Fax:  (598) 26009915 - 26002118<br>Montevideo - Uruguay</p>
+            <?php
+                $queryPersona = "SELECT * FROM personas WHERE id_persona =$remitente";
+                $resultadoPersona= mysqli_query($conexion, $queryPersona);
+                while ($rowPersona = $resultadoPersona->fetch_assoc()) {?>
+                    <p>C.I: <?php echo $rowPersona['dni'];?></p>
+                    <?php
+                } 
+            ?>
+            <p>Firma:</p>
+            <p>Fecha: <?php 
+            echo date("F") . " " . date("m") . ", " . date("Y"); ?></p>
+
         </div>
     </div>
 </div>
+
 
 <?php
 $html = ob_get_clean();

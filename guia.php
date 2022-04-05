@@ -39,7 +39,7 @@ $where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR perso
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de embarque</h2>
+    <h2>Guías de Embarque</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
@@ -117,17 +117,17 @@ while ($row = mysqli_fetch_array($result)) {?>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-trash-fill" ></i></a>
                   <?php 
                   if ($row['tipo_bulto']=='ENA') {?>
-                    <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_guia'];?>);"><i class="bi bi-printer-fill"></i></a>
+                    <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_guia'];?>);"><i class="bi bi-printer-fill"></i></a>
 
                   <?php 
 
                   } else 
                   {?>
-                    <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="reportes/pdf-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-printer-fill"></i></a>
+                    <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Imprimir PDF y/o Factura" href="reportes/pdf-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-printer-fill"></i></a>
                     <?php 
                   }?>
-                  <a class="btn btn-secondary" data-toggle="popover" title="Declaración jurada" href="nueva-declaracion.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
-                  <a class="btn btn-secondary" data-toggle="popover" title="Factura" href="guardar_factura.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
+                  <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Declaración jurada" href="nueva-declaracion.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
+                  <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Factura" href="guardar_factura.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
 
                 </td>
           </tr>
