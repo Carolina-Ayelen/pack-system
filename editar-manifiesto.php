@@ -22,7 +22,7 @@ if(isset($_GET['id_manifiesto'])){
 }
 //actualizar datos
 if(isset($_POST['update'])){
-   $id_manifiesto = $_GET['id_manifiesto'];
+  $id_manifiesto = $_GET['id_manifiesto'];
     $vuelo = $_POST['vuelo'];
     $expedidors=$_POST['expedidor'];
     $consignatario=$_POST['consignatario'];
@@ -30,10 +30,51 @@ if(isset($_POST['update'])){
 
     $query = "UPDATE manifiesto set vuelo = '$vuelo', expedidor='$expedidor', consignatario='$consignatario' WHERE id_manifiesto = $id_manifiesto";
     mysqli_query($conexion, $query);
+    $query_guias_anteriores= "SELECT * FROM manif_embarq WHERE manifiesto_id=$id_manifiesto";
+    $result_guias = mysqli_query($conexion, $query_guias_anteriores);
 
-    $_SESSION['message'] = "Registro modificado con exito";
-    $_SESSION['message-type'] = 'success';
-    header('Location: gestion.php');
+    //recorrer tabla
+    while ($rowG = mysqli_fetch_array($result_guias)) {
+      $guia=$rowG['guia_id'];
+      $query = "UPDATE guia_embarque set estado_id = '1'  WHERE id_guia = $guia";
+      $resultado= mysqli_query($conexion, $query);
+      if (!$resultado) {
+          die("Query failed modificando la guia");
+      } 
+    }
+    $query = "DELETE FROM manif_embarq WHERE manifiesto_id=$id_manifiesto";
+    $resultado= mysqli_query($conexion, $query);
+    if (!$resultado) {
+      die("Query failed modificando la guia");
+    } 
+
+    foreach($_POST['guia'] as $id_guia){ // Ciclo para mostrar las casillas checked checkbox. IMPORTANTE: asigna a la variable id_guia los distintos valores de las guia a incluir en el manifiesto
+      
+      //echo $id_guia."</br>";// Imprime resultados
+      $query = "INSERT INTO manif_embarq(manifiesto_id,guia_id ) VALUES ('$id_manifiesto','$id_guia')";
+      $resultado = mysqli_query($conexion, $query);  
+
+      if(!$resultado){
+          die("Query failed di error insetando en manif embarq ");
+      }
+      else{
+
+          $query = "UPDATE guia_embarque set estado_id = '2' WHERE id_guia = $id_guia";
+          mysqli_query($conexion, $query);
+          if (!$resultado) {
+              die("Query failed modificando la guia");
+          } 
+          else{
+            $_SESSION['message'] = "Registro modificado con exito";
+            $_SESSION['message-type'] = 'success';
+            header('Location: manifiesto.php');
+
+          }
+      }
+
+    }
+
+
 
 }
 
@@ -58,7 +99,7 @@ include_once("includes/sidebar.php");
 <?php 
 if (!empty($cod_origen) and !empty($cod_destino)) { ?>
 
-<form action="editar_manifiesto.php" method="post">
+<form action="editar-manifiesto.php?id_manifiesto=<?php echo $_GET['id_manifiesto']; ?>" method="post">
 
   <div class="table-responsive">
   <h3>Guias para el manifiesto </h3>
@@ -89,7 +130,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
               <td><?php 
               $length = 5;
               $guia = substr(str_repeat(0, $length).$row['id_guia'], - $length);?>
-              <input type="checkbox" name="guia[]" value=<?php echo $guia;?>><?php echo $guia;?></input>
+              <input type="checkbox" checked="checked" name="guia[]" value=<?php echo $guia;?>><?php echo $guia;?></input>
               </td>
 
               <?php 
@@ -162,7 +203,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
           </div>
         </div>
       </div>
-      <input type="submit" class="btn btn-primary" name="manifiesto" value="Guardar manifiesto"/>
+      <input type="submit" class="btn btn-primary" name="update" value="Guardar manifiesto"/>
     <?php } ?>
   </div>
 </form>

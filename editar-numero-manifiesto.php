@@ -11,6 +11,7 @@ if (isset($_GET['id_manifiesto'])) {
     if (!$resultado) {
         die("Query failed");
     } else {
+
         $_SESSION['message'] = "Registro modificado con exito";
         $_SESSION['message-type'] = 'success';
         header('Location: manifiesto.php');

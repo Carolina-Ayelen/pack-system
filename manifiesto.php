@@ -23,7 +23,7 @@ $where = "";
 if (isset($_POST["enviar-nombre"])) {
 $valor = $_POST['campo'];
 if (!empty($valor)) {
-$where = "WHERE personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR personasDest_id LIKE '%$valor%'";
+$where = "AND id_manifiesto LIKE '%$valor%'";
 }
 }
  
@@ -72,7 +72,7 @@ $where = "WHERE personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR per
       <tbody>
         <?php
 
-$query = "SELECT * FROM manifiesto $where" ;
+$query = "SELECT * FROM manifiesto where estado_id= 1 $where" ;
 $result = mysqli_query($conexion, $query);
 
 //recorrer tabla
@@ -99,13 +99,9 @@ while ($row = mysqli_fetch_array($result)) {?>
               <td><?php echo $row['electronico']; ?></td>
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-trash-fill" ></i></a>
-                  
-                  
-                    <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
-
+                  <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
+                  <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
               </td>
-              <td><a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
-
           </tr>
         <?php }?>
       </tbody>

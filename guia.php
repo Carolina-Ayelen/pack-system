@@ -5,7 +5,7 @@ if (answer)*/
 
 let guiaAWB=prompt('Introduzca el número de guía:')               
 window.location='reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB
-window.location ='editar-guia-noacompañada?id='+id+"&" + "guiaAWB=" + guiaAWB
+//window.location ='editar-guia-noacompañada.php?id='+id+"&" + "guiaAWB=" + guiaAWB
 
 }
 </script>
@@ -23,7 +23,7 @@ $where = "";
 if (isset($_POST["enviar-nombre"])) {
 $valor = $_POST['campo'];
 if (!empty($valor)) {
-$where = "WHERE personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR personasDest_id LIKE '%$valor%'";
+$where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR personasDest_id LIKE '%$valor%'";
 }
 }
  
@@ -72,7 +72,7 @@ $where = "WHERE personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR per
       <tbody>
         <?php
 
-$query = "SELECT * FROM guia_embarque $where" ;
+$query = "SELECT * FROM guia_embarque WHERE estado_id= 1 OR estado_id=2 $where" ;
 $result = mysqli_query($conexion, $query);
 
 //recorrer tabla
