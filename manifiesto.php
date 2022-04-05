@@ -39,7 +39,7 @@ $where = "AND id_manifiesto LIKE '%$valor%'";
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de manifiesto</h2>
+    <h2>Guías de Manifiesto</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
@@ -59,14 +59,14 @@ $where = "AND id_manifiesto LIKE '%$valor%'";
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">Número de guía</th>
-          <th scope="col">Número externo</th>
+          <th scope="col">Número de Guía</th>
+          <th scope="col">Número Externo</th>
           <!--<th scope="col">Destinatario</th>-->
           <th scope="col">Destino</th>
           <th scope="col">Fecha Embarque</th>
           <!--<th scope="col">Volumen</th>-->
-          <th scope="col">vuelo</th>
-          <th scope="col">Electrónico</th>
+          <th scope="col">Vuelo</th>
+          <th scope="col">Eletrónico</th>
         </tr>
       </thead>
       <tbody>
@@ -100,10 +100,13 @@ while ($row = mysqli_fetch_array($result)) {?>
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-trash-fill" ></i></a>
                   <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
-                  <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
+                  <?php if ($_SESSION['nombre_usuario'] === 'desarrollo'){?>   
+                    <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-x-square-fill"></i></a>
+                  <?php } ?>
               </td>
           </tr>
-        <?php }?>
+        <?php };?>
+        <?php unset($_SESSION['roll']);?>
       </tbody>
     </table>
   </div>

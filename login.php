@@ -16,6 +16,7 @@ if (empty($usuarioCorrecto) || empty($passwordCorrecto)) {
             $_SESSION['nombre_usuario'] = $usuarioCorrecto;
             $_SESSION['imagen'] = $row['imagen'];
             $_SESSION['pass'] = $passwordCorrecto;
+            $_SESSION['roll'] = $row['roll'];
 
             header("Location: gestion.php");
         }

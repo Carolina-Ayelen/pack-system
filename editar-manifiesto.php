@@ -102,11 +102,11 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
 <form action="editar-manifiesto.php?id_manifiesto=<?php echo $_GET['id_manifiesto']; ?>" method="post">
 
   <div class="table-responsive">
-  <h3>Guias para el manifiesto </h3>
+    <h3>Editar Guías de Manifiesto</h3>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">Número de guía</th>
+          <th scope="col">Número de Guía</th>
           <th scope="col">Remitente</th>
           <th scope="col">Destinatario</th>
           <th scope="col">Destino</th>
@@ -169,6 +169,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
         <?php }?>
       </tbody>
     </table>
+  </div>
     <!-- Datos complementarios del manifiesto-->
     <?php if (!empty($datos)) {?>
       <div class="form-group">
@@ -205,7 +206,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
       </div>
       <input type="submit" class="btn btn-primary" name="update" value="Guardar manifiesto"/>
     <?php } ?>
-  </div>
+  
 </form>
 <?php } ?>
 

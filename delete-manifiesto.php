@@ -12,7 +12,7 @@ if (isset($_GET['id'])){
         $query = "DELETE FROM personas WHERE id_persona = $id";
         $resultado = mysqli_query($conexion, $query);
         if (!$resultado){
-            $_SESSION['message'] = "No se puede eliminar el cliente, envios registrados a su nombre";
+            $_SESSION['message'] = "No se puede eliminar el cliente, envíos registrados a su nombre";
             $_SESSION['message-type'] = 'warning';
 
             header("Location: gestion.php");

@@ -38,16 +38,15 @@ if (isset($_POST["enviar-pais"])) {
 
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <div class="col-md-6">
-    <h3>Guias para el manifiesto </h3>
+  <div class="col-md-4">
+    <h3>Guías de Manifiesto </h3>
   </div>
 
-  <div class="col-md-6">
+  <div class="col-md-8">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
       <div class="input-group">
         <div class="form-outline">
-            <div class="col-md-12 ">
-                <label>País de origen</label> 
+                <label>País de Origen</label> 
                 <select id="cod_origen" name="cod_origen" class="form-select" aria-label="Default select example">
                     <option value="0">Seleccione:</option>
                     <?php
@@ -58,8 +57,8 @@ if (isset($_POST["enviar-pais"])) {
                     }
                     ?>
                 </select>
-            </div>
-            <div class="col-md-12 div-nuevo">
+        </div>
+        <div class="form-outline">
                 <label>País de Destino</label> 
                 <select id="cod_destino" name="cod_destino" class="form-select" aria-label="Default select example">
                     <option value="0">Seleccione:</option>
@@ -71,18 +70,13 @@ if (isset($_POST["enviar-pais"])) {
                     }
                     ?>
                 </select>
-            </div> 
-        <br>
-        
-        
-        
         </div>
         <button type="submit" class="btn btn-primary" name="enviar-pais" value="Buscar">
           <i class="bi bi-search"></i>
         </button>
       </div>
     </form>
-  </div>
+</div>
 
 
 </div>
@@ -159,6 +153,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
         <?php }?>
       </tbody>
     </table>
+  </div> 
     <!-- Datos complementarios del manifiesto-->
     <?php if (!empty($datos)) {?>
       <div class="form-group">
