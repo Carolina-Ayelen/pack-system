@@ -229,11 +229,11 @@ if (isset($_GET['id'])) {
                     <p><strong>Peso a cobrar: <?php echo $peso_volumetrico; ?> </strong></p>
                     <?php }?>
                     <p><strong>Status: </strong></p>
+
                 </div>
             </div>  
+            <!----------fin guia de embarque----------->
 
-         
-                <!----------fin guia de embarque----------->
 
 
 

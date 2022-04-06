@@ -127,8 +127,6 @@ while ($row = mysqli_fetch_array($result)) {?>
                     <?php 
                   }?>
                   <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Declaración jurada" href="nueva-declaracion.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
-                  <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Factura" href="guardar_factura.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-clipboard-check"></i></a>
-
                 </td>
           </tr>
         <?php }?>
