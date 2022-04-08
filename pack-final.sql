@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3307
--- Tiempo de generación: 12-03-2022 a las 13:55:47
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.7
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 08-04-2022 a las 21:02:31
+-- Versión del servidor: 10.4.16-MariaDB
+-- Versión de PHP: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,8 +41,8 @@ CREATE TABLE `bulto` (
 CREATE TABLE `cod_pais` (
   `id_pais` int(11) NOT NULL,
   `codigo` varchar(20) NOT NULL,
-  `descripcion` varchar(20) NOT NULL,
-  `zona` char(1) NOT NULL
+  `descripcion` varchar(255) NOT NULL,
+  `zona` char(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -50,96 +50,233 @@ CREATE TABLE `cod_pais` (
 --
 
 INSERT INTO `cod_pais` (`id_pais`, `codigo`, `descripcion`, `zona`) VALUES
-(1, 'ARG', 'Argentina', 'E'),
-(2, 'BOL', 'Bolivia', 'D'),
-(3, 'CHL', 'Chile', 'D'),
-(4, 'COL', 'Colombia', 'C'),
-(5, 'CRL', 'Costa Rica', 'B'),
-(6, 'CUB', 'Cuba', 'F'),
-(7, 'ECU', 'Ecuador', 'D'),
-(8, 'SLV', 'El Salvador', 'B'),
-(9, 'GTM', 'Guatemala', 'B'),
-(10, 'HND', 'Honduras', 'B'),
-(11, 'MEX', 'México', 'B'),
-(12, 'NIC', 'Nicaragua', 'B'),
-(13, 'PAN', 'Panamá', 'B'),
-(14, 'PRY', 'Paraguay', 'D'),
-(15, 'PER', 'Perú', 'D'),
-(16, 'PRI', 'Puerto Rico', 'F'),
-(17, 'DOM', 'República Dominicana', 'C'),
-(18, 'URY', 'Uruguay', 'E'),
-(19, 'VEN', 'Venezuela', 'E'),
-(20, 'MIA', 'Miami', 'A'),
-(21, 'BRA', 'Brasil', 'E'),
-(22, 'USA', 'EE UU', 'E'),
-(23, 'STM', 'St.Marteen', 'E'),
-(24, 'Haití', 'HAI', 'E'),
-(25, 'CUR', 'Curacao', 'E'),
-(26, 'SMT', 'Saint Martin', 'E'),
-(27, 'ARB', 'Aruba', 'D'),
-(28, 'JAM', 'Jamaica', 'D'),
-(29, 'TTB', 'T.Tobago', 'D'),
-(30, 'BAH', 'Bahamas', 'F'),
-(31, 'BRM', 'Bermudas', 'F'),
-(32, 'GUD', 'Guadalupe', 'F'),
-(33, 'ISM', 'Islas Minor', 'F'),
-(34, 'MAR', 'Martinica', 'F'),
-(35, 'ROT', 'Road Town', 'F'),
-(36, 'SJA', 'St.Jean ARPT', 'F'),
-(37, 'STK', 'St.Kitts', 'F'),
-(38, 'WAL', 'Wallis y Fortuna', 'F'),
-(39, 'AYB', 'Antigua y Barbuda', 'F'),
-(40, 'BAR', 'Barbados', 'F'),
-(41, 'BON', 'Bonaire', 'F'),
-(42, 'DOM', 'Dominica', 'F'),
-(43, 'ISC', 'Islas Caiman', 'F'),
-(44, 'ISV', 'Islas Virgenes', 'F'),
-(45, 'MON', 'Montserrat', 'F'),
-(46, 'ROO', 'Roosevelt Field', 'F'),
-(47, 'STT', 'St.Thomas', 'F'),
-(48, 'STV', 'St.Vincent', 'F'),
-(49, 'ATH', 'Antillas Holandesas', 'F'),
-(50, 'BEL', 'Belice', 'F'),
-(51, 'CND', 'Canadá', 'F'),
-(52, 'GRN', 'Granada', 'F'),
-(53, 'ISM', 'Islas Marianas', 'F'),
-(54, 'IVR', 'Islas Virginias AM', 'F'),
-(55, 'SNL', 'Santa Lucia', 'F'),
-(56, 'PRC', 'Puerto Rico', 'F'),
-(57, 'TYC', 'Turcas y Caicos', 'F'),
-(58, 'ALE', 'Alemania', 'G'),
-(59, 'ESP', 'España', 'G'),
-(60, 'PSB', 'Holanda', 'G'),
-(61, 'LIE', 'Lienchestein', 'G'),
-(62, 'MON', 'Montenegro', 'G'),
-(63, 'MON', 'Montenegro', 'G'),
-(64, 'SMR', 'San Marino', 'G'),
-(65, 'BEL', 'Bélgica', 'G'),
-(66, 'FRN', 'Francia', 'G'),
-(67, 'ITL', 'Italia', 'G'),
-(68, 'LND', 'London', ''),
-(69, 'PRT', 'Portugal', 'G'),
-(70, 'SRB', 'Serbia', 'G'),
-(71, 'SUI', 'Suiza', 'G'),
-(72, 'CVT', 'C.Vaticano', 'G'),
-(73, 'HEA', 'Heathrow', 'G'),
-(74, 'LTN', 'Letonia', 'G'),
-(75, 'LUX', 'Luxemburgo', 'G'),
-(76, 'RUN', 'Reino Unido', 'G'),
-(77, 'SRM', 'Serbia Montenegro', 'G'),
-(78, 'ADR', 'Andorra', 'H'),
-(79, 'AUS', 'Austria', 'H'),
-(80, 'BLA', 'Banja Luka ARPT', 'H'),
-(81, 'BIR', 'Birmania', 'H'),
-(82, 'CAM', 'Camboya', 'H'),
-(83, 'CDS', 'Corea del Sur', 'H'),
-(84, 'ESL', 'Eslovaquia', 'H'),
-(85, 'FIL', 'Filipinas', 'H'),
-(86, 'GIB', 'Gibraltar', 'H'),
-(87, 'GEC', 'Guinea Ecuatorial', 'H'),
-(88, 'IND', 'Indonesia', 'H'),
-(89, 'ISL', 'Islandia', 'H'),
-(90, 'ISS', 'Islas Salomon', 'H');
+(1, 'AD', 'Andorra', NULL),
+(2, 'AE', 'Emiratos Árabes Unidos', NULL),
+(3, 'AF', 'Afganistán', NULL),
+(4, 'AG', 'Antigua y Barbuda', NULL),
+(5, 'AI', 'Anguila', NULL),
+(6, 'AL', 'Albania', NULL),
+(7, 'AM', 'Armenia', NULL),
+(8, 'AN', 'Antillas Neerlandesa', NULL),
+(9, 'AO', 'Angola', NULL),
+(10, 'AQ', 'Antártida', NULL),
+(11, 'AR', 'Argentina', NULL),
+(12, 'AS', 'Samoa Americana', NULL),
+(13, 'AT', 'Austria', NULL),
+(14, 'AU', 'Australia', NULL),
+(15, 'AW', 'Aruba', NULL),
+(16, 'AX', 'Islas Áland', NULL),
+(17, 'AZ', 'Azerbaiyán', NULL),
+(18, 'BA', 'Bosnia y Herzegovina', NULL),
+(19, 'BB', 'Barbados', NULL),
+(20, 'BD', 'Bangladesh', NULL),
+(21, 'BE', 'Bélgica', NULL),
+(22, 'BF', 'Burkina Faso', NULL),
+(23, 'BG', 'Bulgaria', NULL),
+(24, 'BH', 'Bahréin', NULL),
+(25, 'BI', 'Burundi', NULL),
+(26, 'BJ', 'Benin', NULL),
+(27, 'BL', 'San Bartolomé\r\n', NULL),
+(29, 'BN', 'Brunéi', NULL),
+(30, 'BO', 'Bolivia', NULL),
+(31, 'BR', 'Brasil', NULL),
+(32, 'BS', 'Bahamas', NULL),
+(33, 'BT', 'Bhután', NULL),
+(34, 'BV', 'Isla Bouvet', NULL),
+(35, 'BW', 'Botsuana', NULL),
+(36, 'BY', 'Belarús', NULL),
+(37, 'BZ', 'Belice', NULL),
+(38, 'CA', 'Canadá', NULL),
+(40, 'CF', 'República Centro-Africana', NULL),
+(41, 'CG', 'Congo', NULL),
+(42, 'CH', 'Suiza', NULL),
+(43, 'CI', 'Costa de Marfil', NULL),
+(44, 'CK', 'Islas Cook', NULL),
+(45, 'CL', 'Chile', NULL),
+(46, 'CM', 'Camerún', NULL),
+(47, 'CN', 'China', NULL),
+(48, 'CO', 'Colombia', NULL),
+(49, 'CR', 'Costa Rica', NULL),
+(50, 'CU', 'Cuba', NULL),
+(51, 'CV', 'Cabo Verde', NULL),
+(52, 'CX', 'Islas Christmas', NULL),
+(53, 'CY', 'Chipre', NULL),
+(54, 'CZ', 'República Checa', NULL),
+(55, 'DE', 'Alemania', NULL),
+(56, 'DJ', 'Yibuti', NULL),
+(57, 'DK', 'Dinamarca', NULL),
+(58, 'DM', 'Domínica', NULL),
+(59, 'DO', 'República Dominicana', NULL),
+(60, 'DZ', 'Argel', NULL),
+(61, 'EC', 'Ecuador', NULL),
+(62, 'EE', 'Estonia', NULL),
+(63, 'EG', 'Egipto', NULL),
+(64, 'EH', 'Sahara Occidental', NULL),
+(65, 'ER', 'Eritrea', NULL),
+(66, 'ES', 'España', NULL),
+(69, 'FJ', 'Fiji', NULL),
+(70, 'FK', 'Islas Malvinas', NULL),
+(71, 'FM', 'Micronesia', NULL),
+(72, 'FO', 'Islas Faroe', NULL),
+(73, 'FR', 'Francia', NULL),
+(74, 'GA', 'Gabón', NULL),
+(76, 'GD', 'Granada', NULL),
+(77, 'GE', 'Georgia', NULL),
+(78, 'GF', 'Guayana Francesa', NULL),
+(79, 'GG', 'Guernsey', NULL),
+(80, 'GH', 'Ghana', NULL),
+(81, 'GI', 'Gibraltar', NULL),
+(82, 'GL', 'Groenlandia', NULL),
+(83, 'GM', 'Gambia', NULL),
+(84, 'GN', 'Guinea', NULL),
+(85, 'GP', 'Guadalupe', NULL),
+(86, 'GQ', 'Guinea Ecuatorial', NULL),
+(87, 'GR', 'Grecia', NULL),
+(88, 'GS', 'Georgia del Sur e Islas Sandwich del Sur', NULL),
+(89, 'GT', 'Guatemala', NULL),
+(90, 'GU', 'Guam', NULL),
+(91, 'GW', 'Guinea-Bissau', NULL),
+(92, 'GY', 'Guayana', NULL),
+(93, 'HK', 'Hong Kong', NULL),
+(94, 'HM', 'Islas Heard y McDona', NULL),
+(95, 'HN', 'Honduras', NULL),
+(96, 'HR', 'Croacia', NULL),
+(97, 'HT', 'Haití', NULL),
+(100, 'IE', 'Irlanda', NULL),
+(101, 'IL', 'Israel', NULL),
+(102, 'IM', 'Isla de Man', NULL),
+(103, 'IN', 'India', NULL),
+(104, 'IO', 'Territorio Británico', NULL),
+(105, 'IQ', 'Irak', NULL),
+(106, 'IR', 'Irán', NULL),
+(107, 'IS', 'Islandia', NULL),
+(108, 'IT', 'Italia', NULL),
+(109, 'JE', 'Jersey', NULL),
+(110, 'JM', 'Jamaica', NULL),
+(111, 'JO', 'Jordania', NULL),
+(112, 'JP', 'Japón', NULL),
+(114, 'KG', 'Kirguistán', NULL),
+(115, 'KH', 'Camboya', NULL),
+(116, 'KI', 'Kiribati', NULL),
+(117, 'KM', 'Comoros', NULL),
+(118, 'KN', 'San Cristóbal y Nieves', NULL),
+(119, 'KP', 'Corea del Norte', NULL),
+(120, 'KR', 'Corea del Sur', NULL),
+(121, 'KW', 'Kuwait', NULL),
+(122, 'KY', 'Islas Caimán', NULL),
+(123, 'KZ', 'Kazajstán', NULL),
+(124, 'LA', 'Laos', NULL),
+(125, 'LB', 'Líbano', NULL),
+(126, 'LC', 'Santa Lucía', NULL),
+(127, 'LI', 'Liechtenstein', NULL),
+(128, 'LK', 'Sri Lanka', NULL),
+(129, 'LR', 'Liberia', NULL),
+(130, 'LS', 'Lesotho', NULL),
+(131, 'LT', 'Lituania', NULL),
+(132, 'LU', 'Luxemburgo', NULL),
+(133, 'LV', 'Letonia', NULL),
+(134, 'LY', 'Libia', NULL),
+(135, 'MA', 'Marruecos', NULL),
+(136, 'MC', 'Mónaco', NULL),
+(137, 'MD', 'Moldova', NULL),
+(138, 'ME', 'Montenegro', NULL),
+(139, 'MG', 'Madagascar', NULL),
+(140, 'MH', 'Islas Marshall', NULL),
+(141, 'MK', 'Macedonia', NULL),
+(142, 'ML', 'Mali', NULL),
+(143, 'MM', 'Myanmar', NULL),
+(144, 'MN', 'Mongolia', NULL),
+(145, 'MO', 'Macao', NULL),
+(146, 'MQ', 'Martinica', NULL),
+(147, 'MR', 'Mauritania', NULL),
+(148, 'MS', 'Montserrat', NULL),
+(149, 'MT', 'Malta', NULL),
+(150, 'MU', 'Mauricio', NULL),
+(151, 'MV', 'Maldivas', NULL),
+(152, 'MW', 'Malawi', NULL),
+(153, 'MX', 'México', NULL),
+(154, 'MY', 'Malasia', NULL),
+(155, 'MZ', 'Mozambique', NULL),
+(156, 'NA', 'Namibia', NULL),
+(157, 'NC', 'Nueva Caledonia', NULL),
+(158, 'NE', 'Níger', NULL),
+(159, 'NF', 'Islas Norkfolk', NULL),
+(160, 'NG', 'Nigeria', NULL),
+(161, 'NI', 'Nicaragua', NULL),
+(162, 'NL', 'Países Bajos', NULL),
+(163, 'NO', 'Noruega', NULL),
+(164, 'NP', 'Nepal', NULL),
+(165, 'NR', 'Nauru', NULL),
+(166, 'NU', 'Niue', NULL),
+(167, 'NZ', 'Nueva Zelanda', NULL),
+(168, 'OM', 'Omán', NULL),
+(169, 'PA', 'Panamá', NULL),
+(171, 'PF', 'Polinesia Francesa', NULL),
+(172, 'PG', 'Papúa Nueva Guinea', NULL),
+(173, 'PH', 'Filipinas', NULL),
+(174, 'PK', 'Pakistán', NULL),
+(175, 'PL', 'Polonia', NULL),
+(176, 'PM', 'San Pedro y Miquelón', NULL),
+(178, 'PR', 'Puerto Rico', NULL),
+(179, 'PS', 'Palestina', NULL),
+(180, 'PT', 'Portugal', NULL),
+(181, 'PW', 'Islas Palaos', NULL),
+(182, 'PY', 'Paraguay', NULL),
+(183, 'QA', 'Qatar', NULL),
+(184, 'RE', 'Rumanía', NULL),
+(187, 'RU', 'Rusia', NULL),
+(188, 'RW', 'Ruanda', NULL),
+(189, 'SA', 'Arabia Saudita', NULL),
+(190, 'SB', 'Islas Solomón', NULL),
+(192, 'SD', 'Sudán', NULL),
+(193, 'SE', 'Suecia', NULL),
+(194, 'SG', 'Singapur', NULL),
+(195, 'SH', 'Santa Elena', NULL),
+(196, 'SI', 'Eslovenia', NULL),
+(197, 'SJ', 'Islas Svalbard y Jan Mayen', NULL),
+(198, 'SK', 'Eslovaquia', NULL),
+(199, 'SL', 'Sierra Leona', NULL),
+(200, 'SM', 'San Marino', NULL),
+(201, 'SN', 'Senegal', NULL),
+(202, 'SO', 'Somalia', NULL),
+(203, 'SR', 'Surinam', NULL),
+(204, 'ST', 'Santo Tomé y Príncipe', NULL),
+(205, 'SV', 'El Salvador', NULL),
+(206, 'SY', 'Siria', NULL),
+(207, 'SZ', 'Suazilandia', NULL),
+(208, 'TC', 'Islas Turcas y Caico', NULL),
+(209, 'TD', 'Chad', NULL),
+(210, 'TF', 'Territorios Australe', NULL),
+(211, 'TG', 'Togo', NULL),
+(212, 'TH', 'Tailandia', NULL),
+(213, 'TH', 'Tanzania', NULL),
+(214, 'TJ', 'Tayikistán', NULL),
+(215, 'TK', 'Tokelau', NULL),
+(216, 'TL', 'Timor-Leste', NULL),
+(217, 'TM', 'Turkmenistán', NULL),
+(218, 'TN', 'Túnez', NULL),
+(219, 'TO', 'Tonga', NULL),
+(220, 'TR', 'Turquía', NULL),
+(221, 'TT', 'Trinidad y Tobago', NULL),
+(222, 'TV', 'Tuvalu', NULL),
+(223, 'TW', 'Taiwán', NULL),
+(224, 'UA', 'Ucrania', NULL),
+(225, 'UG', 'Uganda', NULL),
+(226, 'US', 'Estados Unidos de América', NULL),
+(227, 'UY', 'Uruguay', NULL),
+(228, 'UZ', 'Uzbekistán', NULL),
+(229, 'VA', 'Ciudad del Vaticano', NULL),
+(230, 'VC', 'San Vicente y las Granadinas', NULL),
+(231, 'VE', 'Venezuela', NULL),
+(232, 'VG', 'Islas Vírgenes Británicas', NULL),
+(233, 'VI', 'Islas Vírgenes de los Estados Unidos de América', NULL),
+(234, 'VN', 'Vietnam', NULL),
+(235, 'VU', 'Vanuatu', NULL),
+(236, 'WF', 'Wallis y Futuna', NULL),
+(237, 'WS', 'Samoa', NULL),
+(238, 'YE', 'Yemen', NULL),
+(239, 'YT', 'Mayotte', NULL),
+(240, 'ZA', 'Sudáfrica', NULL);
 
 -- --------------------------------------------------------
 
@@ -174,14 +311,6 @@ CREATE TABLE `factura` (
   `usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Volcado de datos para la tabla `factura`
---
-
-INSERT INTO `factura` (`id_factura`, `fecha`, `precio_tipo`, `importe_tipo`, `importe_empaquetado`, `importe_tarifario`, `precio_excedenteKg`, `dif_x_peso`, `guia_id`, `usuario_id`) VALUES
-(36, '2021-12-10', '0.07', '42.84', '3.56', '612.04', '23.00', '69.00', 129, 1),
-(37, '2022-01-05', '100.00', '100.00', '0.00', '350.00', '0.00', '0.00', 135, 1);
-
 -- --------------------------------------------------------
 
 --
@@ -190,6 +319,7 @@ INSERT INTO `factura` (`id_factura`, `fecha`, `precio_tipo`, `importe_tipo`, `im
 
 CREATE TABLE `guia_embarque` (
   `id_guia` int(11) NOT NULL,
+  `numero` varchar(25) NOT NULL DEFAULT '''0''',
   `cod_origen` int(11) NOT NULL,
   `cod_destino` int(11) NOT NULL,
   `fecha_emb` date NOT NULL,
@@ -202,32 +332,11 @@ CREATE TABLE `guia_embarque` (
   `peso_volumetrico` float NOT NULL,
   `incotem` varchar(25) NOT NULL,
   `fecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `electronico` char(2) NOT NULL DEFAULT 'no',
   `personasEnv_id` int(11) NOT NULL,
   `personasDest_id` int(11) NOT NULL,
   `estado_id` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `guia_embarque`
---
-
-INSERT INTO `guia_embarque` (`id_guia`, `cod_origen`, `cod_destino`, `fecha_emb`, `valor_mercancia`, `peso_real`, `tipo_bulto`, `cantidad_bulto`, `descripcion`, `empaquetado`, `peso_volumetrico`, `incotem`, `fecha`, `personasEnv_id`, `personasDest_id`, `estado_id`) VALUES
-(129, 15, 16, '2021-12-10', '421', 33, 'APX', 2, 'Documentos', '1', 8, 'DDP', '2022-03-05 12:52:37', 9, 8, 2),
-(130, 15, 16, '2021-12-03', '41', 41, 'APX', 0, 'Equipaje no acompaña', 'Si', 41, 'DDU', '2022-03-06 13:36:50', 9, 8, 2),
-(131, 13, 2, '2021-12-02', '41', 41, 'CAR', 0, 'Documentos', 'Si', 41, 'DDU', '2022-03-05 01:32:30', 9, 8, 1),
-(132, 16, 4, '2021-12-23', '2500', 1.2, 'CAR', 0, 'Documentos', 'Si', 2, 'DDU', '2022-01-13 12:44:09', 9, 8, 1),
-(133, 15, 45, '2021-12-15', '18000', 12, 'APX', 0, 'Medicamentos', 'Si', 12, 'DDU', '2022-01-13 12:44:13', 9, 8, 1),
-(135, 16, 16, '2022-01-05', '12', 12, 'ENA', 0, 'Documentos', 'Si', 12, 'DDP', '2022-03-06 13:52:36', 9, 8, 2),
-(136, 16, 1, '2022-01-04', '12', 32, 'DOX', 0, 'Documentos', 'Si', 0.2, 'DDU', '2022-01-13 13:05:31', 8, 8, 1),
-(137, 1, 1, '2022-01-20', '50000', 56, 'APX', 0, 'Efectos Personales', 'Si', 3.0912, 'DDP', '2022-01-15 18:22:24', 8, 9, 1),
-(138, 1, 2, '2022-01-18', '45', 89, 'APX', 0, 'Efectos Personales', 'Si', 16.1656, 'DDP', '2022-03-05 01:33:20', 8, 9, 1),
-(139, 15, 16, '2022-01-05', '565', 4, 'DOX', 0, 'Efectos Personales', 'Si', 0.405, 'DDP', '2022-03-06 13:36:51', 8, 9, 2),
-(142, 2, 1, '2022-01-12', '456', 30, 'APX', 1, 'Efectos Personales', 'Si', 64.8, 'DDP', '2022-01-17 22:12:19', 8, 9, 1),
-(143, 1, 2, '2022-01-12', '45', 10, 'APX', 1, 'Efectos Personales', 'Si', 20.502, 'DDP', '2022-03-05 01:31:25', 8, 9, 1),
-(144, 2, 5, '2022-02-17', '12', 33, 'APX', 2, 'Efectos Personales', 'Si', 58.48, 'DDP', '2022-02-12 22:56:41', 8, 9, 1),
-(145, 1, 4, '2022-02-12', '7', 23, 'APX', 6, 'Documentos', 'Si', 53.064, 'DDP', '2022-02-13 02:09:14', 8, 9, 1),
-(146, 15, 16, '2022-02-13', '78', 56, 'DOX', 1, 'Efectos Personales', 'Si', 1.9968, 'DDP', '2022-03-05 01:30:38', 9, 8, 1),
-(147, 1, 3, '2022-03-03', '121', 23, 'APX', 2, 'Efectos Personales', 'Si', 80.3724, 'DDP', '2022-03-05 01:21:36', 8, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -237,22 +346,24 @@ INSERT INTO `guia_embarque` (`id_guia`, `cod_origen`, `cod_destino`, `fecha_emb`
 
 CREATE TABLE `manifiesto` (
   `id_manifiesto` int(11) NOT NULL,
+  `numero` varchar(10) NOT NULL DEFAULT '0',
   `fecha` date NOT NULL,
   `vuelo` varchar(11) NOT NULL,
   `cod_origen` int(11) NOT NULL,
   `cod_destino` int(11) NOT NULL,
   `expedidor` varchar(1000) NOT NULL,
-  `consignatario` varchar(1000) NOT NULL
+  `consignatario` varchar(1000) NOT NULL,
+  `electronico` char(2) NOT NULL DEFAULT 'no',
+  `estado_id` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `manifiesto`
 --
 
-INSERT INTO `manifiesto` (`id_manifiesto`, `fecha`, `vuelo`, `cod_origen`, `cod_destino`, `expedidor`, `consignatario`) VALUES
-(17, '2022-02-14', 'eerttree', 1, 6, '234422', '34445555'),
-(18, '2022-02-14', 'uu', 1, 6, 'conferry', 'ferriban'),
-(19, '2022-02-14', 'ttrtrtrtrt', 1, 6, 'trtrtrtrtrtr', 'edredfrdrdr');
+INSERT INTO `manifiesto` (`id_manifiesto`, `numero`, `fecha`, `vuelo`, `cod_origen`, `cod_destino`, `expedidor`, `consignatario`, `electronico`, `estado_id`) VALUES
+(29, '0', '2022-02-14', '5653368', 1, 2, 'FERIBAN S.A. Aeropuerto Int´l. de Carrasco TCU of 116 Montevideo - Uruguay', 'xxxxx', 'no', 1),
+(30, 'null', '2022-02-14', '123456', 1, 2, 'FERIBAN S.A. Aeropuerto Int´l. de Carrasco TCU of 116 Montevideo - Uruguay', '123', 'no', 2);
 
 -- --------------------------------------------------------
 
@@ -270,10 +381,8 @@ CREATE TABLE `manif_embarq` (
 --
 
 INSERT INTO `manif_embarq` (`manifiesto_id`, `guia_id`) VALUES
-(17, 129),
-(18, 130),
-(18, 139),
-(19, 135);
+(29, 138),
+(30, 143);
 
 -- --------------------------------------------------------
 
@@ -293,14 +402,6 @@ CREATE TABLE `personas` (
   `cod_postal` int(11) NOT NULL,
   `correo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `personas`
---
-
-INSERT INTO `personas` (`id_persona`, `dni`, `nombre`, `apellidos`, `direccion`, `tel`, `pais`, `departamento`, `cod_postal`, `correo`) VALUES
-(8, 566, 'luis', 'Perez Bolivar', 'Av. Alirio Ugarte Pelayo, casa Nro 56', '5666', 2, 'Florida', 6201, 'uu@gmail.com'),
-(9, 104356456, 'Maria', 'Bello', 'rtrrt', '4164522883', 1, 'Buenos Aires', 43, 'yyy@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -390,13 +491,6 @@ CREATE TABLE `usuario` (
   `personas_id` int(11) NOT NULL,
   `imagen` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `pass`, `roll`, `personas_id`, `imagen`) VALUES
-(1, 'desarrollo', '123', 'administrador', 8, NULL);
 
 --
 -- Índices para tablas volcadas
@@ -493,7 +587,7 @@ ALTER TABLE `guia_embarque`
 -- AUTO_INCREMENT de la tabla `manifiesto`
 --
 ALTER TABLE `manifiesto`
-  MODIFY `id_manifiesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_manifiesto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `personas`
@@ -505,7 +599,7 @@ ALTER TABLE `personas`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas
