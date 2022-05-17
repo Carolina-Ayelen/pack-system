@@ -1,12 +1,12 @@
 <script type="text/javascript">
 function AlertIt(id) {
-/*var answer = confirm ("Please click on OK to continue.")
-if (answer)*/
+
 
 let guiaAWB=prompt('Introduzca el número de guía:')               
-window.location='reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB
-//window.location ='editar-guia-noacompañada.php?id='+id+"&" + "guiaAWB=" + guiaAWB
 
+//window.location ='editar-guia-noacompañada.php?id='+id+"&" + "guiaAWB=" + guiaAWB
+var win = window.open(('reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB), '_blank')
+win.focus();
 }
 </script>
 
