@@ -1,13 +1,14 @@
 <script type="text/javascript">
 function AlertIt(id_manifiesto) {
-/*var answer = confirm ("Please click on OK to continue.")
-if (answer)*/
+
 
 let guiaAWB=prompt('Introduzca el número de manifiesto:')   
-console.log (id_manifiesto)             
-//  FATA POR DISEÑAR window.location='reportes/pdfENA_manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
-window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
-}
+console.log (id_manifiesto)   
+
+//window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
+
+var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
+win.focus();}
 </script>
 
 <?php

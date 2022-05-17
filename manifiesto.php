@@ -1,12 +1,13 @@
 <script type="text/javascript">
 function AlertIt(id_manifiesto) {
-/*var answer = confirm ("Please click on OK to continue.")
-if (answer)*/
+
 
 let guiaAWB=prompt('Introduzca el número de manifiesto:')   
-console.log (id_manifiesto)             
-//  FATA POR DISEÑAR window.location='reportes/pdfENA_manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
-window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
+
+//window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
+     
+var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
+win.focus();
 }
 </script>
 
@@ -99,7 +100,7 @@ while ($row = mysqli_fetch_array($result)) {?>
               <td><?php echo $row['electronico']; ?></td>
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-trash-fill" ></i></a>
-                  <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
+                  <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF " href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
                   <?php if ($_SESSION['nombre_usuario'] === 'desarrollo'){?>   
                     <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-x-square-fill"></i></a>
                   <?php } ?>
