@@ -8,7 +8,8 @@ console.log (id_manifiesto)
 //window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
 
 var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
-win.focus();}
+win.focus();
+}
 </script>
 
 <?php
@@ -40,7 +41,7 @@ $where = "AND id_manifiesto LIKE '%$valor%' ";
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de manifiesto</h2>
+    <h2>Guías de Manifiestos Cerrados</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
@@ -60,13 +61,13 @@ $where = "AND id_manifiesto LIKE '%$valor%' ";
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">Número de guía</th>
-          <th scope="col">Número externo</th>
+          <th scope="col">Número de Guía</th>
+          <th scope="col">Número Externo</th>
           <!--<th scope="col">Destinatario</th>-->
           <th scope="col">Destino</th>
           <th scope="col">Fecha Embarque</th>
           <!--<th scope="col">Volumen</th>-->
-          <th scope="col">vuelo</th>
+          <th scope="col">Vuelo</th>
           <th scope="col">Electrónico</th>
         </tr>
       </thead>
@@ -99,7 +100,16 @@ while ($row = mysqli_fetch_array($result)) {?>
               <td><?php echo $row['vuelo']; ?></td>
               <td><?php echo $row['electronico']; ?></td>
               <td>   
-                  <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
+                  <?php  
+                  if (strlen($row['numero'])>1){
+                  ?> 
+                  <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Imprimir PDF y/o Factura" href="reportes/pdf-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>&guiaAWB=<?php echo $row['numero']?>"><i class="bi bi-printer-fill"></i></a>
+ 
+                  <?php }
+                    else{?>
+                  <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF " href="javascript:AlertIt(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-printer-fill"></i></a>
+                  <?php   
+                  }?>
               </td>
           </tr>
         <?php }?>

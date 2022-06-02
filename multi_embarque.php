@@ -61,7 +61,7 @@ include_once "includes/footer.php";
                     ?>
                 </select> <br/>
                 <button type="button" class="btn btn-secondary" onclick="procesoAtras0()">Anterior</button>
-                <button type="button" class="btn btn-success" onclick="processPhase2()">Continue</button>
+                <button type="button" class="btn btn-success" onclick="processPhase2()">Continuar</button>
                 <a href="nuevo-cliente.php"><button type="button" class="btn btn-light">Nuevo Cliente</button></a>
             </div>
 
@@ -425,7 +425,7 @@ include_once "includes/footer.php";
                     </div>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="procesoAtras1()">Anterior</button>
-                <button type="button" class="btn btn-success" onclick="processPhase3()">Continue</button>
+                <button type="button" class="btn btn-success" onclick="processPhase3()">Continuar</button>
             </div>
             <div id="show_all_data">
             

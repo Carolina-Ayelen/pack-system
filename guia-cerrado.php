@@ -39,7 +39,7 @@ $where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR perso
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de embarque</h2>
+    <h2>Guías de Embarque Cerrados</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">

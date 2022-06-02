@@ -79,8 +79,8 @@ return array (
     'normal' => $fontDir . '/DejaVuSerif',
   ),
   'lato' => array(
-    'normal' => $fontDir . '/lato_normal_7e89c2707278385e59b149142f779d6e',
-    'bold' => $fontDir . '/lato_bold_a37fb3b180e8dc9f478950eed9f4a19a',
+    'normal' => $fontDir . '/lato_normal_e84d821566a5c4c11d867dc495c5d1d6',
+    'bold' => $fontDir . '/lato_bold_390c1eb4db6823132bd56ad1e5f68b57',
   ),
   'glyphicons halflings' => array(
     'normal' => $fontDir . '/glyphicons_halflings_normal_448cf7c5a9f8cf5b480d96c9606cc001',

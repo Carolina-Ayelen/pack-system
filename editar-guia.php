@@ -19,6 +19,8 @@ if (isset($_GET['id'])) {
         $num_bulto = $row['cantidad_bulto'];
         $empaquetado = $row['empaquetado'];
         $peso_volumetrico = $row['peso_volumetrico'];
+        $peso_real = $row['peso_real'];
+        $numero=$row['numero'];
         $icontem = $row['incotem'];
         $destinatario = $row['personasDest_id'];
         $remitente = $row['personasEnv_id'];
@@ -29,6 +31,7 @@ if (isset($_GET['id'])) {
 //actualizar datos
 if (isset($_POST['update'])) {
     $id = $_GET['id'];
+    $numero=$_POST['numero'];
     $peso_real = $_POST['peso-real'];
     $cod_origen = $_POST['cod-origen'];
     $cod_destino = $_POST['cod-destino'];
@@ -46,7 +49,7 @@ if (isset($_POST['update'])) {
     $remitente = $_POST['remitente'];
     $descripcion = $_POST['descripcion'];
 
-    $query = "UPDATE guia_embarque set peso_real = '$peso_real', cod_origen='$cod_origen',cod_destino='$cod_destino', fecha_emb='$fecha', valor_mercancia='$valor', tipo_bulto='$tipo_bulto', cantidad_bulto='$num_bulto', empaquetado='$empaquetado', peso_volumetrico='$peso_volumetrico', incotem = '$icontem', personasDest_id ='$destinatario', personasEnv_id = '$remitente', descripcion = '$descripcion'  WHERE id_guia = $id";
+    $query = "UPDATE guia_embarque set numero = '$numero', peso_real = '$peso_real', cod_origen='$cod_origen',cod_destino='$cod_destino', fecha_emb='$fecha', valor_mercancia='$valor', tipo_bulto='$tipo_bulto', cantidad_bulto='$num_bulto', empaquetado='$empaquetado', peso_volumetrico='$peso_volumetrico', incotem = '$icontem', personasDest_id ='$destinatario', personasEnv_id = '$remitente', descripcion = '$descripcion'  WHERE id_guia = $id";
     mysqli_query($conexion, $query);
     if (!$resultado) {
         die("Query failed");
@@ -199,17 +202,21 @@ include_once "includes/sidebar.php";
         </div>
         <div class="form-group">
                 <div class="row">
-                    <div class="col-md-4 div-nuevo">
+                    <div class="col-md-3 div-nuevo">
                         <label>Peso Real</label>
                         <input type="text" name="peso-real" value='<?php echo $peso_real; ?>' id="real" class='form-control' maxlength="25" required ></input>
                     </div>
-                    <div class="col-md-4 div-nuevo">
+                    <div class="col-md-3 div-nuevo">
                         <label>Peso Volumétrico</label>
                         <input type="text" name="peso-volumetrico" value='<?php echo $peso_volumetrico; ?>' id="peso" class='form-control' maxlength="25" required ></input>
                     </div>
-                    <div class="col-md-4 div-nuevo">
+                    <div class="col-md-3 div-nuevo">
                     <label>Servicio</label>
                         <input type="text" name="servicio" id="servicio" placeholder="International Express Standard" value="International Express Standard" class='form-control' maxlength="25"></input>
+                    </div>
+                    <div class="col-md-3 div-nuevo">
+                        <label>Numero Externo</label>
+                        <input type="text" name="numero" value='<?php echo $numero; ?>' id="peso" class='form-control' maxlength="15" required ></input>
                     </div>
                 </div>
         </div>

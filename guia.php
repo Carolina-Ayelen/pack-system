@@ -1,14 +1,18 @@
+
+
 <script type="text/javascript">
 function AlertIt(id) {
 
 
-let guiaAWB=prompt('Introduzca el número de guía:')               
-
-//window.location ='editar-guia-noacompañada.php?id='+id+"&" + "guiaAWB=" + guiaAWB
-var win = window.open(('reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB), '_blank')
+  let guiaAWB=prompt('Introduzca el número de guía:');  
+//window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
+     
+var win = window.open('reportes/pdf-guia-ena.php?id='+id+"&" + "guiaAWB=" + guiaAWB, '_blank')
 win.focus();
+
 }
 </script>
+
 
 <?php
 include "session.php";
@@ -109,17 +113,25 @@ while ($row = mysqli_fetch_array($result)) {?>
                 <td><?php echo $rowOrigen['codigo']; ?></td>  
              <?php }
               ?>
-              <td><?php echo $row['fecha_emb']; ?></td>
+              <td><?php echo $row['fecha_emb']; ?></td> <?php $tipo= $row['tipo_bulto'];?>
               <td><?php echo $row['cantidad_bulto']; ?></td>
               <td><?php echo $row['peso_volumetrico']; ?></td>
               <!-- <td><?php echo $row['empaquetado']; ?></td>-->
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-pencil-fill"></i></a>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-trash-fill" ></i></a>
                   <?php 
-                  if ($row['tipo_bulto']=='ENA') {?>
-                    <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_guia'];?>);"><i class="bi bi-printer-fill"></i></a>
-
-                  <?php 
+                  
+                  if ($row['tipo_bulto']=='ENA') {
+                    if (strlen($row['numero'])>1){
+                      ?> <a class="btn btn-secondary" target="_black" data-toggle="popover" title="Imprimir PDF y/o Factura" href="reportes/pdf-guia-ena.php?id=<?php echo $row['id_guia']; ?>&guiaAWB=<?php echo $row['numero']?>"><i class="bi bi-printer-fill"></i></a>
+ 
+                  <?php }
+                    else{?>
+                      <a class="btn btn-secondary" data-toggle="popover" title="Imprimir PDF y/o Factura" href="javascript:AlertIt(<?php echo $row['id_guia'];?>);"><i class="bi bi-printer-fill"></i></a>
+  
+                      <?php   
+                    }
+                  
 
                   } else 
                   {?>

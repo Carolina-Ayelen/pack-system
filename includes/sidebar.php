@@ -23,7 +23,7 @@
       <?php echo $_SESSION["nombre_usuario"]; ?>
     </a>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <li><a class="dropdown-item" href="perfil.php">Perfil</a></li>
+      <!--<li><a class="dropdown-item" href="perfil.php">Perfil</a></li>-->
       <li><a class="dropdown-item" href="pass.php">Cambiar contraseña</a></li>
       <li><a class="dropdown-item" href="logout.php">Salir</a></li>
     </ul>
@@ -34,16 +34,6 @@
 <div class="row">
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
   <div class="position-sticky pt-3">
-    <a href="gestion.php" class="nav-link">
-      <?php
-//mostrar imagen de usuario
-$id = $_SESSION['id_usuario'];
-$query = "SELECT imagen FROM usuario WHERE id_usuario = '$id'";
-$result = mysqli_query($conexion, $query);
-while ($row = mysqli_fetch_array($result)) {?>
-                <?php echo "<img src='" . $row['imagen'] . "' class='logo'>"; ?>
-                <?php }?>
-    </a>
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
       <span>Clientes</span>
       <a class="link-secondary" href="#" aria-label="Add a new report">

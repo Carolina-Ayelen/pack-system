@@ -29,6 +29,13 @@ if (isset($_GET['id'])) {
         $destinatario = $row['personasDest_id'];
         $remitente = $row['personasEnv_id'];
         $descripcion = $row['descripcion'];
+        
+        $modf_numero = "UPDATE guia_embarque set numero = '$guiaAWB'  WHERE id_guia = $id";
+        $resultado= mysqli_query($conexion, $modf_numero);
+        if (!$resultado) {
+           echo 'error guardando numero externo';
+        } 
+
        
     }
     $query3 = "SELECT * FROM cod_pais  WHERE id_pais = $cod_origen ";

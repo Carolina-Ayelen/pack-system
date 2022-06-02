@@ -10,25 +10,27 @@ if(isset($_GET['id_manifiesto'])){
 
     if(mysqli_num_rows($resultado) == 1){
         $row = mysqli_fetch_array($resultado);
-      
+        $numero = $row['numero'];
         $vuelo = $row['vuelo'];
         $cod_origen= $row['cod_origen'];
         $cod_destino=$row['cod_destino'];
         $expedidor=$row['expedidor'];
         $consignatario=$row['consignatario'];
         $electronico=$row['electronico'];
+
    }
  
 }
 //actualizar datos
 if(isset($_POST['update'])){
   $id_manifiesto = $_GET['id_manifiesto'];
+    $numero = $_POST['numero'];
     $vuelo = $_POST['vuelo'];
     $expedidors=$_POST['expedidor'];
     $consignatario=$_POST['consignatario'];
 
 
-    $query = "UPDATE manifiesto set vuelo = '$vuelo', expedidor='$expedidor', consignatario='$consignatario' WHERE id_manifiesto = $id_manifiesto";
+    $query = "UPDATE manifiesto set numero = '$numero',vuelo = '$vuelo', expedidor='$expedidor', consignatario='$consignatario' WHERE id_manifiesto = $id_manifiesto";
     mysqli_query($conexion, $query);
     $query_guias_anteriores= "SELECT * FROM manif_embarq WHERE manifiesto_id=$id_manifiesto";
     $result_guias = mysqli_query($conexion, $query_guias_anteriores);
@@ -174,11 +176,15 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
     <?php if (!empty($datos)) {?>
       <div class="form-group">
         <div class="row">
-          <div class="col-md-4 div-nuevo">
+        <div class="col-md-3 div-nuevo">
+              <label>NÚMERO EXTERNO</label>
+              <input type="text" name="numero" id="numero" value=<?php echo $numero ?> class='form-control' maxlength="20" required ></input>
+          </div>
+          <div class="col-md-3 div-nuevo">
               <label>FLIGHT</label>
               <input type="text" name="vuelo" id="vuelo" value=<?php echo $vuelo ?> class='form-control' maxlength="20" required ></input>
           </div>
-          <div class="col-md-4 div-nuevo">
+          <div class="col-md-3 div-nuevo">
               <label>SHIPPER</label>
               <select class="form-select" aria-label="Default select example" id="expedidor" name="expedidor">
                 <option selected> <?php echo $expedidor ?></option>
@@ -188,7 +194,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
                 </select>
          
             </div>
-          <div class="col-md-4 div-nuevo">
+          <div class="col-md-3 div-nuevo">
               <label>CONSIGNEE</label>
               <input type="text" name="consignatario" id="consignatario"  value= <?php echo $consignatario ?> class='form-control' maxlength="25" required ></input>
           </div>
