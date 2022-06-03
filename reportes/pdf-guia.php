@@ -84,7 +84,7 @@ if (isset($_GET['id'])) {
 <div class="container">
     <div class="row" style="border:solid 1px black;">
         <div class="col-xs-3">
-            <img src="http://<?php echo $_SERVER['HTTP_HOST'];  ?>/pack/proyecto-pack-master/img/logo.png" style="max-width: 150px; margin-top:15px" alt="logo pack">
+            <img src="http://<?php echo $_SERVER['HTTP_HOST'];  ?>/pack-sistema/img/logo.png" style="max-width: 150px; margin-top:15px" alt="logo pack">
             <br>
             <p><strong>Cliente: </strong>Pack Express Uruguay S.A.S (COMVD07341)</p>
             <p><strong>Origen: </strong>Aeropuerto de Carrasco, Montevideo (MVD)</p>
@@ -102,13 +102,16 @@ if (isset($_GET['id'])) {
                         echo $codPais; ?>
                         </h5> 
                         <?php
-                        $barHTML = new Picqer\Barcode\BarcodeGeneratorHTML();
+                      /*  $barHTML = new Picqer\Barcode\BarcodeGeneratorPNG();
                         $codPais = $rowPais['codigo'];
                         $length = 5;
                         $string = substr(str_repeat(0, $length).$id_guia, - $length);
                         $codigoBarra= $codPais . $string;
                         echo $barHTML->getBarcode($codigoBarra, $barHTML::TYPE_CODE_128);
-                         echo $codigoBarra;
+                        echo $codigoBarra;
+                        */
+                        $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
+                        echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode('081231723897', $generator::TYPE_CODE_128)) . '">';
                         ?>
                     </div> <?php
                 } 
@@ -286,7 +289,7 @@ if (isset($_GET['id'])) {
  <!----------fin guia de embarque----------->
 
 
-                <?php
+<?php
 $html = ob_get_clean();
 
 $options = $dompdf->getOptions();
