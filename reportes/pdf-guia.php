@@ -102,16 +102,13 @@ if (isset($_GET['id'])) {
                         echo $codPais; ?>
                         </h5> 
                         <?php
-                      /*  $barHTML = new Picqer\Barcode\BarcodeGeneratorPNG();
+                        $barHTML = new Picqer\Barcode\BarcodeGeneratorHTML();
                         $codPais = $rowPais['codigo'];
                         $length = 5;
                         $string = substr(str_repeat(0, $length).$id_guia, - $length);
                         $codigoBarra= $codPais . $string;
                         echo $barHTML->getBarcode($codigoBarra, $barHTML::TYPE_CODE_128);
-                        echo $codigoBarra;
-                        */
-                        $generator = new Picqer\Barcode\BarcodeGeneratorPNG();
-                        echo '<img src="data:image/png;base64,' . base64_encode($generator->getBarcode('081231723897', $generator::TYPE_CODE_128)) . '">';
+                         echo $codigoBarra;
                         ?>
                     </div> <?php
                 } 
@@ -289,7 +286,7 @@ if (isset($_GET['id'])) {
  <!----------fin guia de embarque----------->
 
 
-<?php
+                <?php
 $html = ob_get_clean();
 
 $options = $dompdf->getOptions();
