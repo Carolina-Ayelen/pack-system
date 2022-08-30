@@ -26,6 +26,10 @@ function procesoAtras2() {
     _("status").innerHTML = "Paso 3 de 3 Datos del Embarque";
 }
 
+function datosremitente() { /*Datos remitente */
+    remitente = _("remitente").value;
+
+}
 function processPhase1() { /*Datos remitente */
     remitente = _("remitente").value;
     if (remitente.length > 0) {

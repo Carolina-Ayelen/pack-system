@@ -19,7 +19,7 @@
 
 .detalleSuperior{
     width: 900px;
-    height:122px;  /* alto para los detalles de la parte superior */
+    height:143px;  /* alto para los detalles de la parte superior */
     border:5px solid red;
     background:red;
     color:black;
@@ -121,10 +121,16 @@
 #house{
     color:red;
     margin-left:50px;
-    line-height:0.8em;
+   /* line-height:0.8em;
+    font-size: 2rem;
+   */
+   /* text-align:center;*/font: 2em "Trebuchet MS",Arial,Sans-Serif;
+   
     
-    /*text-align:center;*/
-    
+}
+#letraGrande{
+    font: "Trebuchet MS",Arial,Sans-Serif;
+    font-size: 2em;
 }
 
 .color_columna{
@@ -176,6 +182,7 @@ include "../conexion.php";
 
 if (isset($_GET['id_guia'])) {
     $id = $_GET['id_guia'];
+    $total= $_GET['totalDeclarado'];
     $query = "SELECT * FROM guia_embarque WHERE id_guia = $id";
     $resultado = mysqli_query($conexion, $query);
 
@@ -195,6 +202,17 @@ if (isset($_GET['id_guia'])) {
         $destinatario = $row['personasDest_id'];
         $remitente = $row['personasEnv_id'];
         $descripcion = $row['descripcion'];
+
+
+       
+
+      
+        $query_modif = "UPDATE guia_embarque set valor_mercancia = $total +$valor WHERE id_guia = $id_guia";
+        $resultado= mysqli_query($conexion, $query_modif);
+        if ($resultado) {
+           /* die("Error al modificar guia");*/
+        } 
+      
     }
 
 }
@@ -220,9 +238,10 @@ if (isset($_GET['id_guia'])) {
                 $string = substr(str_repeat(0, $length).$id_guia, - $length);
                 $codigoBarra= $codPais . $string;
             ?>
-        <h4 id="house"><?php echo  $codigoBarra;  ?> </h4>
+        <p id="house" ><?php echo  $codigoBarra;  ?> </p>
+      
         <p class= "interlineado"><strong>Fecha/Date: </strong><?php echo date("F") . " " . date("m") . ", " . date("Y");?> </p>
-        <p class= "interlineado"> <strong>Factura/Invoice: <?php  echo  $string   ?></strong></p>
+        <p class= "interlineado"> <strong>Factura/Invoice: <?php  echo  $string   ?></strong></p><br>
 
         <p ><strong><u>SHIPPER:</u></strong></p>
 
@@ -242,14 +261,14 @@ if (isset($_GET['id_guia'])) {
             <p class="direccion"><strong>Direccion/Address: </strong><?php echo $rowEnv['direccion'] . ' ' . $rowEnv['pais'] . ' ' . $rowEnv['departamento']; ?></p>
         <?php
             }?>
-        <br>
+        
         <p><strong>Comentarios/Comments or Special</p>
         <br><br>Instructions:</strong>
        
     </div>
     <div class="receptor membretesSuperior">
-        <h2 class="text-center" style="max-width:80%;">Factura Comercial  </h2>
-        <h2 class="text-center" style="max-width:80%;">(Commercial Invoice)</h2><br>
+        <h2  style="max-width:80%;" class="text-center" id="letraGrande" >Factura Comercial  </h2>
+        <h2 class="text-center" style="max-width:80%;" id="letraGrande">(Commercial Invoice)</h2><br>
         <p class="text-center"><strong><u>SHIPPED TO:</u></strong></p>
             
 
@@ -355,93 +374,91 @@ if (isset($_GET['id_guia'])) {
             <th class="collapse"><p> <?php echo $_GET['cantt10'];?> </p></th>
             <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn10'];?></p></th>
             <th class="collapse"><p class="der"> <?php if ($_GET['totall10']>0) echo number_format($_GET['precioo10'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p class="izq"> <?php if  ($_GET['totall10']>0)  echo number_format($_GET['totall10'],2,',','.');?></p> </th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall10']>0)  echo number_format($_GET['totall10'],2,',','.');?></p> </th>
         </tr>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt11'];?> </p></th>
             <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn11'];?></p></th>
             <th class="collapse"><p class="der"> <?php if ($_GET['totall11']>0) echo number_format($_GET['precioo11'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p class="izq"> <?php if  ($_GET['totall11']>0) echo $_GET['totall11'];?></p> </th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall11']>0) echo number_format( $_GET['totall11'],2,',','.');?></p> </th>
         </tr>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant12'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion12'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total12']>0) echo number_format($_GET['precio12'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total12']>0) echo $_GET['total12'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt12'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn12'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall12']>0) echo number_format($_GET['precioo12'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall12']>0) echo number_format( $_GET['totall12'],2,',','.');?></p> </th>
         </tr>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant13'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion13'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total13']>0) echo number_format($_GET['precio13'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total13']>0) echo $_GET['total13'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt13'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn13'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall13']>0) echo number_format($_GET['precioo13'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall13']>0) echo number_format( $_GET['totall13'],2,',','.');?></p> </th>
         </tr>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt14'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn14'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall14']>0) echo number_format($_GET['precioo14'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall14']>0) echo number_format( $_GET['totall14'],2,',','.');?></p> </th>
 
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant14'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion14'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total14']>0) echo number_format($_GET['precio14'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total14']>0) echo $_GET['total14'];?></p> </th>
         </tr>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant15'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion15'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total15']>0) echo number_format($_GET['precio15'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total15']>0) echo $_GET['total15'];?></p> </th>
-        </tr>
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant16'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion16'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total16']>0) echo number_format($_GET['precio16'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total16']>0) echo $_GET['total16'];?></p> </th>
-        </tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt15'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn15'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall15']>0) echo number_format($_GET['precioo15'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall15']>0) echo number_format( $_GET['totall15'],2,',','.');?></p> </th>
 
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant17'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion17'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total17']>0) echo number_format($_GET['precio17'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total17']>0) echo $_GET['total17'];?></p> </th>
         </tr>
-      
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt16'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn16'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall16']>0) echo number_format($_GET['precioo16'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall16']>0) echo number_format( $_GET['totall16'],2,',','.');?></p> </th>
 
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant18'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion18'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total18']>0) echo number_format($_GET['precio18'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total18']>0) echo $_GET['total18'];?></p> </th>
         </tr>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt17'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn17'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall17']>0) echo number_format($_GET['precioo17'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall17']>0) echo number_format( $_GET['totall17'],2,',','.');?></p> </th>
 
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant19'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total19']>0) echo number_format($_GET['precio19'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total19']>0) echo $_GET['total19'];?></p> </th>
         </tr>
- 
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt18'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn18'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall18']>0) echo number_format($_GET['precioo18'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall18']>0) echo number_format( $_GET['totall18'],2,',','.');?></p> </th>
+
         </tr>
-        <?php  if (strlen($_GET['descripcion20'])>1)
+        <?php  if (strlen($_GET['descripcionn19'])>0)
        { ?>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt19'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn19'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall19']>0) echo number_format($_GET['precioo19'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall19']>0) echo number_format( $_GET['totall19'],2,',','.');?></p> </th>
+
+        </tr>
+
+
+
+
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt20'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn21'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall20']>0) echo number_format($_GET['precioo20'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall20']>0) echo number_format( $_GET['totall20'],2,',','.');?></p> </th>
         </tr>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt21'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn21'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall21']>0) echo number_format($_GET['precioo21'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall21']>0) echo number_format( $_GET['totall21'],2,',','.');?></p> </th>
         </tr>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt22'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn22'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall22']>0) echo number_format($_GET['precioo22'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall22']>0) echo number_format( $_GET['totall22'],2,',','.');?></p> </th>
         </tr>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>

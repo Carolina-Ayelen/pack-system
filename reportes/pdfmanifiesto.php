@@ -23,3 +23,6 @@ $dompdf->setPaper('A5', 'portrait');
 $dompdf->render();
 $dompdf->stream("reportes.pdf", array("Attachment"=>false));
 ?>
+
+
+

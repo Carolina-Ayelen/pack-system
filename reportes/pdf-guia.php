@@ -84,7 +84,7 @@ if (isset($_GET['id'])) {
 <div class="container">
     <div class="row" style="border:solid 1px black;">
         <div class="col-xs-3">
-            <img src="http://<?php echo $_SERVER['HTTP_HOST'];  ?>/pack-sistema/img/logo.png" style="max-width: 150px; margin-top:15px" alt="logo pack">
+            <img src="http://<?php echo $_SERVER['HTTP_HOST'];  ?>/pack/proyecto-pack-master/img/logo.png" style="max-width: 150px; margin-top:15px" alt="logo pack">
             <br>
             <p><strong>Cliente: </strong>Pack Express Uruguay S.A.S (COMVD07341)</p>
             <p><strong>Origen: </strong>Aeropuerto de Carrasco, Montevideo (MVD)</p>

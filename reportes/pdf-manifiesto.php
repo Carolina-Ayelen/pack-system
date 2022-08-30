@@ -7,6 +7,7 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 ob_start();
+include "../conexion.php";
 ?>
 <style>
 
@@ -23,20 +24,6 @@ ob_start();
 /*#header { position: fixed; right: 0px; bottom: 10px; text-align: center;border-top: 1px solid black;}
 #header .page:after { content: counter(page, decimal); }
  @page { margin: 5px 3px 4px 5px; }*/
-
-
-.detalleSuperior{
-    width: 900px;
-    height:122px;  /* alto para los detalles de la parte superior */
-    border:5px solid red;
-    
-    color:black;
-    display:flex;
-    align-items:flex-end;
-    line-height:0.1em;
-    
-    
-}
 
 /*
 .destinatario{
@@ -127,9 +114,21 @@ table{
     padding:0;
 }
 */
+.detalleSuperior{
+    width: 900px;
+    height:122px;  /* alto para los detalles de la parte superior */
+    border:5px solid red;
+    
+    color:black;
+    display:flex;
+    align-items:flex-end;
+    line-height:0.1em;
+    
+    
+}
 .izq{
     text-align:left;
-    margin:2px;
+    margin:4px;
     width: 110px;
     
 }
@@ -150,6 +149,15 @@ table{
     padding:0;
    
 }
+.pequeno{
+    font-size: 0.7rem;
+}
+.membretes{
+    font-size: 0.8rem;   
+}
+.deliverty{
+    width:10%;
+}
 
 
 /*
@@ -163,15 +171,17 @@ table{
 */
 .interlineado_nombre{
   line-height:1.2em;
-  width: 350px;
+  width: 200px;
   text-align:left;
-    margin-right :6px;
+  margin-right :6px;
     
 }
 .origen{
-    width: 180px;
+    width: 1px;
 }
-
+.interlineado_detalles{
+  line-height:3rem;
+}
 </style>
 
 
@@ -284,7 +294,7 @@ if (isset($_GET['id_manifiesto'])) {
             <th class="collapse">
 
            <?php echo $barHTML->getBarcode($codigoBarra, $barHTML::TYPE_CODE_128);
-                 echo $codigoBarra;?>
+                ?>
 
             </th>
 
@@ -343,6 +353,23 @@ if (isset($_GET['id_manifiesto'])) {
 
         </div> 
         
+        <table class="tabla_detalles">
+            <thead class="membretes ">
+                <tr > 
+                    <th>HAWB</th>
+                    <th>ORIGIN</th>
+                    <th>/DEST</th>
+                    <th>SHIPPER</th>
+                    <th>CONSIGNEE</th>
+                    <th class="deliverty">DELIVERTY TERMS</th>
+                    <th>PCS</th>
+                    <th class="deliverty">WEIGHT KG</th>
+                    <th>VALUE</th>
+                    <th>DESCRIPCION</th>
+        
+                </tr>  
+            </thead> 
+            
             <?php
         $query = "SELECT * FROM manif_embarq WHERE manifiesto_id = $id_manifiesto";
         $resultadoGuias = mysqli_query($conexion, $query);
@@ -378,35 +405,20 @@ if (isset($_GET['id_manifiesto'])) {
 
 
           
-            <table class="collapse">
-            <thead class="membretes">
-                <tr > 
-                    <th>HAWB</th>
-                    <th>ORIGIN</th>
-                    <th>/DEST</th>
-                    <th>SHIPPER</th>
-                    <th>CONSIGNEE</th>
-                    <th>DELIVERTY TERMS</th>
-                    <th>PCS</th>
-                    <th>WEIGHT KG</th>
-                    <th>VALUE</th>
-                    <th>DESCRIPCION</th>
-        </u>
-                </tr>  
-            </thead>     
             <tbody class="letraDetalles "> 
-                <tr class="collapse">
-                    <th class="collapse izq"><p> <?php 
+                <tr>
+                    <th class="collapse izq pequeno"><p> <?php 
                                     $barHTML = new Picqer\Barcode\BarcodeGeneratorHTML();
                                     $length = 5;
                                     $string = substr(str_repeat(0, $length).$id_guia, - $length);
                                     $codigoBarra= $codPais . $string;
+                                    echo $codigoBarra;
                                     echo $barHTML->getBarcode($codigoBarra, $barHTML::TYPE_CODE_128);
-                                     echo $codigoBarra;
+                                     
                     ?> </p></th>
-                    <th class="collapse origen"><p> <?php echo $codPais;?> </p></th>
-                    <th class="collapse origen"><p> <?php echo $codPais_dest;?> </p></th>
-                    <th class="collapse izq interlineado_nombre"><p> <?php 
+                    <th class="collapse origen pequeno"><p> <?php echo $codPais;?> </p></th>
+                    <th class="collapse origen pequeno"><p> <?php echo $codPais_dest;?> </p></th>
+                    <th class="collapse izq interlineado_nombre pequeno"><p> <?php 
                     
                     $queryEnvia = "SELECT * FROM personas WHERE id_persona =$remitente";
                     $resultadoEnv = mysqli_query($conexion, $queryEnvia);
@@ -420,7 +432,7 @@ if (isset($_GET['id_manifiesto'])) {
                     
                      </p></th>
 
-                    <th  class="collapse interlineado_nombre"> 
+                    <th  class="collapse interlineado_nombre pequeno"> 
 
                 
                     
@@ -438,21 +450,21 @@ if (isset($_GET['id_manifiesto'])) {
 
 
                     </th>
-                    <th class="collapse"><p> <?php echo "DDU (Prepaid)";?> </p></th>
-                    <th class="collapse"><p> <?php echo $num_bulto;?> </p></th>
-                    <th class="collapse"><p> <?php echo $peso_volumetrico;?> </p></th>
-                    <th class="collapse"><p> <?php echo $valor;?> </p></th>
-                    <th class="collapse"><p> <?php echo $descripcion;?> </p></th>
+                    <th class="collapse pequeno"><p> <?php echo "DDU (Prepaid)";?> </p></th>
+                    <th class="collapse pequeno"><p> <?php echo $num_bulto;?> </p></th>
+                    <th class="collapse pequeno"><p> <?php echo $peso_volumetrico;?> </p></th>
+                    <th class="collapse pequeno"><p> <?php echo $valor;?> </p></th>
+                    <th class="collapse interlineado_detalles pequeno"><p> <?php echo $descripcion; ?> <br></p></th>
 
                 </tr>  
 
 
         
             </tbody>    
-        </table > 
+               
 
     <?php } ?>
-       
+    </table>  
     </div>
 </div>
 
@@ -463,7 +475,19 @@ if (isset($_GET['id_manifiesto'])) {
     <p class="page">Page </p>
   </div> -->
 
-<script>
+  <?php
+$html = ob_get_clean();
+
+$options = $dompdf->getOptions();
+$options->set(array('isRemoteEnabled' => true));
+$dompdf->setOptions($options);
+
+$dompdf->loadHtml($html);
+$dompdf->setPaper('A4', 'landscape');
+
+$dompdf->render();
+$dompdf->stream("reportes.pdf", array("Attachment"=>false));
+?>
 
 
 

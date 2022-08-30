@@ -82,42 +82,219 @@ if (isset($_GET['id'])) {
         }
     }
 
-    th{
+   /* th{
         font-size: 6px;
         border-right:0.5px solid black;
     }
     td{
         border-right:0.5px solid black;
         /*border-bottom:0.5px solid black;*/
-        font-size:7px;
-    }
+   /*     font-size:7px;
+    }*/
     .espacio{
         width:100%;
         height:90px;
     }
     .nombre{
-        font-size:8px;
+        font-size:10px;
+        line-height:0.1em;
+        margin-left:5px;
     }
     html {
-	margin-top: 8pt;
+	margin-top: 0px;
+    }
+    @page {
+    margin:0px;
+    margin-right:10px;
 
     }
-    .table{
+    .tabla{
         margin:0px!important;
+        padding: 0;
+    }
+
+    .centrar{
+        margin=0;
+        text-align:center;
+    }
+    .codigoB{
+        font-size: 13px;
+        border-right:0.5px solid black;
+        margin:0px;
+        text-align:left;
+        width: 4px;
+    
+    }
+    .codigoC{
+        font-size: 13px;  
+        border: right 0px;
+    }
+    .principal{
+        width:100%;
+        margin:0px!important;
+        padding: 0;
+    }
+    .codigoA{
+        width: 4px;
+        font-size: 13px;
+        border-right:0.5px solid black
+    }
+    .codigoD{
+        font-size: 13px;  
+        border: right 0px;
+        text-align:center;
+    }
+    .bordes{
+        border:0.5px solid black; width: 100%;  
+
+    }
+    .bordes_der{border-right:0.5px solid black; width: 25%;
+
+    }
+    .bordes_center{
+        border:0.5px solid black; 
+        width: 25%; Background:#c0c0c0;
+    }
+    .centrar{ text-align:center;border-right:0.5px solid black }
+    .bordes_der_notNeg{ border-right:0px; border-bottom:0px solid black; width: 13%; margin-left:3px; }
+    .centrar_copa{ text-align:center;border-right:0.5px solid black; width: 37%; }
+    .margen{
+        margin-left:3px;
+    }
+    .copies{
+        border:0.5px solid black;
+    }
+    .lineas_pegadas{
+        margin-top:0.2em;
+        margin-bottom:0em;
+        line-height:0.6em;
+    }
+    .justificado{
+        text-align:justify;
+    }
+    .sin_borde_inferior{
+        border-bottom:0px solid black;
     }
     </style>
 </head>
 <body>
 <br>
-<div class="container">
+
+
+    <table class="principal">
+        <thead >
+            <tr >
+                <th class="codigoA">230</th>
+                <th class="codigoB">MTV</th>
+                <th class="codigoC"><?php echo $guiaAWB;?></th>
+                <th class="codigoD">230 - <?php echo " ".$guiaAWB;?></th>
+                              
+            </tr>  
+        </thead>
+
+    </table>
+    <table class="bordes">
+        <tbody>
+            <tr >
+                <th class="bordes_der"><p style="font-size: 8px">Shipper´s Name and Address</p><br></th>
+                <th class="bordes_center"><p style="font-size: 8px">Shipper´s Account Number</p><br></th>
+                <th class="bordes_der_notNeg lineas"><p class="margen "style="font-size: 8px">Not Negotiable</p>            <h6 class="margen"> Air Waybill</h6>
+                                            </th>
+                <th class="centrar_copa"><p>COPA AIRLINES <br>Compañia Panameñia de Aviación, S.A.</p></th>
+                              
+            </tr>  
+
+            <tr >
+            <?php
+                $queryEnvia = "SELECT * FROM personas WHERE id_persona =$remitente";
+                $resultadoEnv = mysqli_query($conexion, $queryEnvia);
+                while ($rowEnv = $resultadoEnv->fetch_assoc()) {?>
+
+
+                <th class="lineas"><p class="nombre"><?php echo $rowEnv['nombre'] . ' ' . $rowEnv['apellidos']; ?></p>
+                    <p class="nombre"><?php echo $rowEnv['direccion'] . ' ' . $rowEnv['pais'] . ' ' . $rowEnv['departamento']; ?></p>
+                    <p class="nombre">Tel.:<?php echo $rowEnv['tel']; ?></p>
+                </th>
+                <th ></th>
+                <th class="bordes_der_notNeg linea">     
+                                            <p class="margen" style="font-size: 8px">Issued by</p> </th>
+                <th class="centrar_copa"><p> P.O.BOX 1572 <br>PANAMA 1,PANAMA</p></th>
+                <?php
+            }
+            ?>              
+            </tr> 
+            <tr>
+                <th></th>
+                <th></th>
+                <td colspan="2" class="copies"><p style="font-size: 8px">Copies 1, 2 and 3 of this Air Waybill are originals and have the same validity</p></td>
+                
+                
+            <tr>           
+        </tbody>
+
+    </table>
+
+    <!--REVERSE HEREOF, ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS
+            SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES TAHT THE SHIPMENT MAY BE CARRIED VIA
+            INTERMEDIATE STOPPING PLACES WICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER´S ATTENTION IS DRAWN TO THE NOTICE CONCERNING
+            CARRIER´S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if
+            required.-->
+    <table class="bordes">
+        <tbody>
+            <tr class=" lineas_pegadas" >
+                <th class="bordes_der lineas_pegadas"><p style="font-size: 8px">By</p></th>
+                <th class="bordes_center lineas_pegadas"><p style="font-size: 8px">Consignee´s Account Number</p></th>
+                <td class=" justificado copies sin_borde_inferior" style="font-size: 9.3px"  > 
+                It is agreed that the goods described herein are accepted in apparent good order an condition (except as noted) for carriage SUBJECT TO THE CONDITIONS OF
+            CONTRACT ON THE </td>
+                
+            
+             
+            </tr> 
+            <tr class=" lineas_pegadas" >
+                <th class="bordes_der lineas_pegadas"><br></th>
+                <th><br></th>
+                <td class="justificado" style="font-size: 9.3px" >
+                REVERSE HEREOF, ALL GOODS MAY BE CARRIED BY ANY OTHER MEANS INCLUDING ROAD OR ANY OTHER CARRIER UNLESS
+            SPECIFIC CONTRARY INSTRUCTIONS ARE GIVEN HEREON BY THE SHIPPER, AND SHIPPER AGREES TAHT THE SHIPMENT MAY BE CARRIED VIA
+            INTERMEDIATE STOPPING PLACES WICH THE CARRIER DEEMS APPROPRIATE. THE SHIPPER´S ATTENTION IS DRAWN TO THE NOTICE CONCERNING
+            CARRIER´S LIMITATION OF LIABILITY. Shipper may increase such limitation of liability by declaring a higher value for carriage and paying a supplemental charge if
+            required.</td>
+                
+            
+             
+            </tr> 
+
+            </tbody>
+
+    </table>
+
+
+    <table >
+ <tr>
+  <td colspan="2" rowspan="2">Celda cs2 rs2</td>
+  <td>Celda aaa</td>
+ </tr>
+ <tr>
+  <td>Celda</td>
+ </tr>
+ <tr>
+  <td>Celda xx</td>
+  <td>Celda yy</td>
+  <td>Celdazz</td>
+ </tr>
+</table>
+    <div class="container">
     <div class="row" style="border:solid black 0.5px";>
         <div class="col-xs-6">
-            <h5>230-MTV- <?php echo $guiaAWB;?></h5>
+            <h5 class ="centrar">230-MTV- <?php echo $guiaAWB;?></h5>
         </div>
         <div class="col-xs-6">
-            <h5>230- <?php echo $guiaAWB;?></h5>
+            <h5 class ="centrar">230-MTV <?php echo $guiaAWB;?></h5>
         </div>
     </div>
+
+
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-4" style="border-right:solid black 0.5px;">
             <p style="font-size: 8px">Shipper´s Name and Address</p>
@@ -171,7 +348,7 @@ if (isset($_GET['id'])) {
                 <p style="font-size: 8px">Issuing Carrier´s Agent Name and City</p>
                 <p class="nombre">FERIBAN - MONTEVIDEO URUGUAY </p>
             </div>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <td>Agent´s IATA Code</td>
@@ -189,7 +366,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-12">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>To</th>
@@ -227,7 +404,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-3">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>Airport of Destination</th>
@@ -245,7 +422,7 @@ if (isset($_GET['id'])) {
             </table>
         </div>
         <div class="col-xs-9">
-        <table class="table">
+        <table class="tabla">
                 <thead>
                     <tr>
                         <th>Amount of Insurance</th>
@@ -278,7 +455,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-12">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>No. Of Pieces RCP</th>
@@ -309,7 +486,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-4" style="border-right:solid black 0.5px">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>Prepaid</th>
@@ -318,7 +495,7 @@ if (isset($_GET['id'])) {
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="border-top:none">0,00</th>
@@ -327,7 +504,7 @@ if (isset($_GET['id'])) {
                 </tbody>
             </table>
             <p class="nombre" style="text-align:center;">Valuation Charge</p>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th></th>
@@ -336,7 +513,7 @@ if (isset($_GET['id'])) {
                 </tbody>
             </table>
             <p class="nombre" style="text-align:center;">Tax</p>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th></th>
@@ -352,7 +529,7 @@ if (isset($_GET['id'])) {
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-4" style="border-right:solid black 0.5px">
             <p class="nombre" style="text-align:center;">Total Other Charges Due Agent</p>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th>0,00</th>
@@ -361,7 +538,7 @@ if (isset($_GET['id'])) {
                 </tbody>
             </table>
             <p class="nombre" style="text-align:center;">Total Other Charges Due Carrier</p>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="visbility:hidden">0,00</th>
@@ -378,7 +555,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-4" style="border-right:solid black 0.5px">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>Total Prepaid</th>
@@ -386,7 +563,7 @@ if (isset($_GET['id'])) {
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="border-top:none">AS AGREED</th>
@@ -396,7 +573,7 @@ if (isset($_GET['id'])) {
             </table>
         </div>
         <div class="col-xs-8">
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <td style="border:none">16 de Marzo de 2022</td>
@@ -416,7 +593,7 @@ if (isset($_GET['id'])) {
     </div>
     <div class="row" style="border:solid black 0.5px;">
         <div class="col-xs-4" style="border-right:solid black 0.5px">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>Currency Conversion Rates</th>
@@ -424,7 +601,7 @@ if (isset($_GET['id'])) {
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="border-top:none"></th>
@@ -432,7 +609,7 @@ if (isset($_GET['id'])) {
                     </tr>
                 </tbody>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>For Carriers Use only at Destination</th>
@@ -440,7 +617,7 @@ if (isset($_GET['id'])) {
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="border-top:none"></th>
@@ -450,14 +627,14 @@ if (isset($_GET['id'])) {
             </table>
         </div>
         <div class="col-xs-8">
-            <table class="table">
+            <table class="tabla">
                 <thead>
                     <tr>
                         <th>Total Collect Charges</th>
                     </tr>
                 </thead>
             </table>
-            <table class="table">
+            <table class="tabla">
                 <tbody>
                     <tr>
                         <th style="border-top:none"></th>
