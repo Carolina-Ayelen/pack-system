@@ -22,6 +22,14 @@ if(isset($_GET['id'])){
    }
  
 }
+
+if(isset( $_GET['regreso'])){
+    $regreso = $_GET['regreso'];
+    }
+    else {
+    $regreso ="clientes";
+    }
+
 //actualizar datos
 if(isset($_POST['update'])){
    $id = $_GET['id'];
@@ -34,13 +42,26 @@ if(isset($_POST['update'])){
     $cod_postal=$_POST['cod_postal'];
     $tel=$_POST['tel'];
     $correo=$_POST['correo'];
+    $regreso=$_POST['regreso'];
+
+
+
+
+ 
+  
 
     $query = "UPDATE personas set nombre = '$nombre', apellidos='$apellidos', direccion='$direccion', pais='$pais', departamento='$departamento', cod_postal='$cod_postal', tel='$tel', correo='$correo' WHERE id_persona = $id";
     mysqli_query($conexion, $query);
 
     $_SESSION['message'] = "Registro modificado con exito";
     $_SESSION['message-type'] = 'success';
-    header('Location: gestion.php');
+    if ($regreso =="remitente"){
+        header('Location: multi_embarque.php');
+    }
+    else{
+        header('Location: gestion.php');
+    }
+   
 
 }
 
@@ -74,7 +95,7 @@ include_once("includes/sidebar.php");
 
                     <div class="col-md-4 div-nuevo">
                         <label>Dirección</label>
-                        <input type="text" name="direccion" id="direccion" class='form-control' maxlength="50" required value="<?php echo $direccion; ?>"></input>
+                        <input type="text" name="direccion" id="direccion" class='form-control' maxlength="50"  value="<?php echo $direccion; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
                     <label>Cod de origen</label>  <!--Llenado pais actual y todos -->
@@ -97,22 +118,24 @@ include_once("includes/sidebar.php");
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label>Departamento</label>
-                        <input type="text" name="departamento" id="departamento" class='form-control' maxlength="50" required value="<?php echo $departamento; ?>"></input>
+                        <input type="text" name="departamento" id="departamento" class='form-control' maxlength="50" value="<?php echo $departamento; ?>"></input>
+                        <input type= "hidden" name="regreso" id="regreso" class='form-control' maxlength="50" required value="<?php echo $regreso; ?>"></input>
                     </div>
 
                 </div>
                 <div class="row">
                     <div class="col-md-4 div-nuevo">
                         <label>Cód Postal</label>
-                        <input type="text" name="cod_postal" id="cod_postal" class='form-control' maxlength="50" required value="<?php echo $cod_postal; ?>"></input>
+                        <input type="text" name="cod_postal" id="cod_postal" class='form-control' maxlength="50"  value="<?php echo $cod_postal; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label>Teléfono</label>
-                        <input type="text" name="tel" id="tel" class='form-control' maxlength="50" required value="<?php echo $tel; ?>"></input>
+                        <input type="text" name="tel" id="tel" class='form-control' maxlength="50"  value="<?php echo $tel; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="email" class="col-sm-2 control-label">Email</label>
-                        <input type="email" class="form-control" id="correo" name="correo" required value= "<?php echo $correo; ?>">
+                        <input type="email" class="form-control" id="correo" name="correo"  value= "<?php echo $correo; ?>">
+                     
                     </div>
 
                 </div>

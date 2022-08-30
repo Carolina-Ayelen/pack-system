@@ -5,6 +5,12 @@ include_once "includes/header.php";
 include_once "includes/sidebar.php";
 include_once "includes/footer.php";
 
+if(isset($_GET['regreso'])){
+    $regreso = $_GET['regreso'];
+    }
+    else {
+    $regreso ="clientes";
+    }
 ?>
 
 
@@ -50,7 +56,7 @@ include_once "includes/footer.php";
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="departamento" class="col-sm-2 control-label">Departamento</label>
-                        <input type="text" class="form-control" id="departamento" name="departamento" required>
+                        <input type="text" class="form-control" id="departamento" name="departamento" >
                     </div>
                 </div>
             </div>
@@ -62,11 +68,12 @@ include_once "includes/footer.php";
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="telefono" class="col-sm-2 control-label">Teléfono</label>
-                        <input type="tel" class="form-control" id="telefono" name="tel">
+                        <input type="tel" class="form-control" id="telefono" name="tel" required >
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="email" class="col-sm-2 control-label">Email</label>
-                        <input type="email" class="form-control" id="correo" name="correo" required>
+                        <input type="email" class="form-control" id="correo" name="correo">
+                        <input  type= "hidden" class="form-control" id="regreso" name="regreso" value=<?php echo $regreso;?> >
                     </div>
                 </div>
             </div>

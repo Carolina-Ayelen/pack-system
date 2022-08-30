@@ -7,7 +7,7 @@ include "conexion.php";
     $cod_origen = $_POST['cod_origen'];
     $cod_destino = $_POST['cod_destino'];
     $fecha = $_POST['fecha'];
-    $valor = $_POST['valor'];
+    $valor = 0;
     $tipo_bulto = $_POST['tipo_bulto'];
     $num_bulto = $_POST['num_bulto'];
     $empaquetado = $_POST['empaquetado'];
@@ -28,9 +28,17 @@ include "conexion.php";
     if (!$resultado) {
         die("Query failed");
     } else {
+        $guia_generada="SELECT  max(id_guia) as id_guia FROM guia_embarque WHERE cod_origen =$cod_origen ";
+            
+        $rowguia = mysqli_query($conexion, $guia_generada);
+        if (mysqli_num_rows($rowguia) == 1) {
+            $rowguias = mysqli_fetch_array($rowguia);
+            $guia=$rowguias['id_guia'];
+
         $_SESSION['message'] = 'Guia guardada';
         $_SESSION['message-type'] = 'success';
         echo 'guia aguardada';
-        header('Location: guia.php');
+        header("Location: nueva-declaracion.php?id=$guia");
+        }
     }
 /*}*/

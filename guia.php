@@ -76,7 +76,7 @@ $where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR perso
       <tbody>
         <?php
 
-$query = "SELECT * FROM guia_embarque WHERE estado_id= 1 OR estado_id=2 $where" ;
+$query = "SELECT * FROM guia_embarque WHERE estado_id= 1 OR estado_id=2 $where " ;
 $result = mysqli_query($conexion, $query);
 
 //recorrer tabla
@@ -149,7 +149,7 @@ while ($row = mysqli_fetch_array($result)) {?>
 </div>
 </div>
 <script 
-     alert("hola");
+     a
      
      src="js/main.js">
     </script>

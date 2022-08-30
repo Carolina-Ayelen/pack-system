@@ -5,6 +5,7 @@ include("conexion.php");
 //trae los datos de la base
 if(isset($_GET['id_manifiesto'])){
     $id_manifiesto = $_GET['id_manifiesto'];
+    
     $query = "SELECT * FROM manifiesto WHERE id_manifiesto = $id_manifiesto";
     $resultado = mysqli_query($conexion, $query);
 

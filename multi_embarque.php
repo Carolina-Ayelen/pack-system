@@ -10,6 +10,7 @@ include_once "includes/footer.php";
 <html>
   <head>
     <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
       form#multiphase {
         border: #000 1px solid;
@@ -31,28 +32,37 @@ include_once "includes/footer.php";
         <form id="multiphase" onsubmit="return false">
 
             <div id="phase1"> <!-- Remitente-->
-                Remitente:
+                
+                 Remitente:
                 <select id="remitente" name="remitente" class="form-select" aria-label="Default select example">
                 <option value="">Seleccione:</option>
                 <?php
-                $query = "SELECT * FROM personas";
+                $query = "SELECT * FROM personas  order by dni";
                 $result = mysqli_query($conexion, $query);
                 while ($row = mysqli_fetch_array($result)) {
                     echo '<option value="' . $row['id_persona'] . '">' . $row['dni'] .', '. $row['nombre'] . ' ' . $row['apellidos'] . '</option>';
                 }
                 ?>
                 </select> <br/>
+
+               
                 <button type="button" class="btn btn-success" onclick="processPhase1()">Continuar</button>
-                <a href="nuevo-cliente.php"><button type="button" class="btn btn-light">Nuevo Cliente</button></a>
+                <a href="nuevo-cliente.php?regreso=remitente"><button type="button" class="btn btn-light">Nuevo Cliente</button></a>
+                           <div id="loconseguido">
+            
+            </div><!--aqui se mostraran los resultados-->
             </div>
 
+
+
+               
 
             <div id="phase2">  <!-- Destinatario -->
                 Destinatario:<br/>
                 <select id="destinatario" name="destinatario" class="form-select" aria-label="Default select example">
                     <option value="">Seleccione:</option>
                     <?php
-                    $query = "SELECT * FROM personas";
+                    $query = "SELECT * FROM personas order by dni";
                     $result = mysqli_query($conexion, $query);
                     while ($row = mysqli_fetch_array($result)) {
                         echo '<option value="' . $row['id_persona'] . '">' . $row['dni'] .', '. $row['nombre'] . ' ' . $row['apellidos'] . '</option>';
@@ -61,8 +71,11 @@ include_once "includes/footer.php";
                     ?>
                 </select> <br/>
                 <button type="button" class="btn btn-secondary" onclick="procesoAtras0()">Anterior</button>
-                <button type="button" class="btn btn-success" onclick="processPhase2()">Continuar</button>
+                <button type="button" class="btn btn-success" onclick="processPhase2()">Continue</button>
                 <a href="nuevo-cliente.php"><button type="button" class="btn btn-light">Nuevo Cliente</button></a>
+                <div id="loconseguidoDest">
+          
+          </div><!--aqui se mostraran los resultados-->
             </div>
 
         <div id="phase3">  <!-- Envío -->
@@ -100,8 +113,8 @@ include_once "includes/footer.php";
                         <input type="date" type="date" name="fecha" id="fecha" class='form-control' maxlength="25" required ></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
-                        <label>Valor de mercancía</label>
-                        <input type="text" name="valor" id="valor" class='form-control' maxlength="25" required ></input>
+                       
+                        <input type="hidden" name="valor" id="valor" class='form-control' maxlength="25" value=1></input>
                     </div>
             
                 </div>
@@ -425,7 +438,7 @@ include_once "includes/footer.php";
                     </div>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="procesoAtras1()">Anterior</button>
-                <button type="button" class="btn btn-success" onclick="processPhase3()">Continuar</button>
+                <button type="button" class="btn btn-success" onclick="processPhase3()">Continue</button>
             </div>
             <div id="show_all_data">
             
@@ -445,7 +458,9 @@ include_once "includes/footer.php";
             </div>
         </form>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" ></script>
+    <script src="js/prueba.js" ></script>
+    <script src="js/destinatarios.js" ></script> 
   </body>
 </html>
 

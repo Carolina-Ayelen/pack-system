@@ -13,6 +13,7 @@ if (isset($_POST['guardar_cliente'])){
     $departamento = $_POST['departamento'];
     $cod_postal = $_POST['cod_postal'];
     $correo = $_POST['correo'];
+    $regreso=$_POST['regreso'];
 
     $consultaPersona="SELECT * FROM personas WHERE dni='$dni' ";
     $consulta=mysqli_query($conexion,$consultaPersona);
@@ -29,7 +30,12 @@ if (isset($_POST['guardar_cliente'])){
         }else{
             $_SESSION['message']= 'Cliente guardado';
             $_SESSION['message-type'] = 'success';
-            header('Location: gestion.php');
+            if ($regreso =="remitente"){
+                header('Location: multi_embarque.php');
+            }
+            else{
+                header('Location: gestion.php');
+            }
         } 
 
     }
@@ -37,7 +43,12 @@ if (isset($_POST['guardar_cliente'])){
         $_SESSION['message'] = "El cliente ya se encuentra registrado";
         $_SESSION['message-type'] = 'warning';
 
-        header("Location: gestion.php");
+        if ($regreso =="remitente"){
+            header('Location: multi_embarque.php');
+        }
+        else{
+            header('Location: gestion.php');
+        }
     }
 }
 ?>
