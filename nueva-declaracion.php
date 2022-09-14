@@ -141,7 +141,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="col-md-2 field_wrapper">
                     <label for=""><strong>Cantidad (Amount)</strong></label>
-                    <input name="total1" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total1" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
  
@@ -156,7 +156,7 @@ if (isset($_GET['id'])) {
                     <input name="precio2" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total2" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total2" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
              
@@ -171,7 +171,7 @@ if (isset($_GET['id'])) {
                     <input name="precio3" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total3" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total3" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -185,7 +185,7 @@ if (isset($_GET['id'])) {
                     <input name="precio4" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total4" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total4" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
 
@@ -200,7 +200,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo5" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall5" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall5" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -214,7 +214,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo6" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall6" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall6" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -228,7 +228,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo7" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input  name="totall7" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input  name="totall7" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -242,8 +242,9 @@ if (isset($_GET['id'])) {
                     <input name="precioo8" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall8" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall8" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
+            </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
                     <input name="descripcionn9" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
@@ -255,7 +256,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo9" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall9" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall9" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -269,7 +270,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo10" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall10" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall10" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -283,7 +284,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo11" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall11" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall11" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -297,7 +298,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo12" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall12" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall12" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -311,7 +312,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo13" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall13" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall13" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -325,7 +326,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo14" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall14" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall14" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -339,7 +340,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo15" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 fielo_wrapper">
-                    <input name="totall15" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall15" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -353,7 +354,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo16" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall16" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall16" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -367,7 +368,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo17" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall17" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall17" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -381,8 +382,9 @@ if (isset($_GET['id'])) {
                     <input name="precioo18" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall18" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall18" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
+            </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
                     <input name="descripcionn19" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
@@ -394,7 +396,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo19" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall19" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall19" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -408,14 +410,14 @@ if (isset($_GET['id'])) {
                     <input name="precioo20" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall20" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall20" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
            
         <!-- pagina dos-->
 
 
-        <div class="row ">
+            <div class="row ">
                 <div class="col-md-4 field_wrapper">
                     <input  name="descripcionn21" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
@@ -427,7 +429,7 @@ if (isset($_GET['id'])) {
                 </div>
                 <div class="col-md-2 field_wrapper">
 
-                    <input name="totall21" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall21" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -441,7 +443,7 @@ if (isset($_GET['id'])) {
                     <input name="precioo22" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="totall22" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall22" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -455,7 +457,7 @@ if (isset($_GET['id'])) {
                     <input name="precio23" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total23" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total23" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -469,7 +471,7 @@ if (isset($_GET['id'])) {
                     <input name="precio24" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total24" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total24" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -483,7 +485,7 @@ if (isset($_GET['id'])) {
                     <input name="precio5" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total5" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total5" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -497,7 +499,7 @@ if (isset($_GET['id'])) {
                     <input name="precio6" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total6" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total6" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -511,7 +513,7 @@ if (isset($_GET['id'])) {
                     <input name="precio7" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input  name="total7" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input  name="total7" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -525,8 +527,9 @@ if (isset($_GET['id'])) {
                     <input name="precio8" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total8" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total8" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
+            </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
                     <input name="descripcion9" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
@@ -538,7 +541,7 @@ if (isset($_GET['id'])) {
                     <input name="precio9" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total9" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total9" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -552,7 +555,7 @@ if (isset($_GET['id'])) {
                     <input name="precio10" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total10" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total10" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -566,7 +569,7 @@ if (isset($_GET['id'])) {
                     <input name="precio11" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total11" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total11" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -580,7 +583,7 @@ if (isset($_GET['id'])) {
                     <input name="precio12" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total12" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total12" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -594,7 +597,7 @@ if (isset($_GET['id'])) {
                     <input name="precio13" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total13" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total13" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -608,7 +611,7 @@ if (isset($_GET['id'])) {
                     <input name="precio14" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total14" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total14" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -622,7 +625,7 @@ if (isset($_GET['id'])) {
                     <input name="precio15" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total15" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total15" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -636,7 +639,7 @@ if (isset($_GET['id'])) {
                     <input name="precio16" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total16" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total16" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -650,7 +653,7 @@ if (isset($_GET['id'])) {
                     <input name="precio17" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total17" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total17" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -664,8 +667,9 @@ if (isset($_GET['id'])) {
                     <input name="precio18" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total18" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total18" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
+            </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
                     <input name="descripcion19" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
@@ -677,7 +681,7 @@ if (isset($_GET['id'])) {
                     <input name="precio19" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total19" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total19" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
             <div class="row ">
@@ -691,7 +695,7 @@ if (isset($_GET['id'])) {
                     <input name="precio20" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total20" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="total20" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onkeyup="cantidad();">
                 </div>
             </div>
         <!--<button onclick="declaracionPDF()">Generar PDF acá</button>-->
