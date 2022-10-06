@@ -30,7 +30,6 @@ function datosremitente() { /*Datos remitente */
     remitente = _("remitente").value;
 
 }
-
 function processPhase1() { /*Datos remitente */
     remitente = _("remitente").value;
     if (remitente.length > 0) {
@@ -66,14 +65,14 @@ function processPhase3() {
     empaquetado = _("empaquetado").value;
     incotem = _("incotem").value;
     descripcion = _("descripcion").value;
-    if (cod_origen.length > 0 && cod_destino > 0 && fecha.length > 0 && valor.length > 0 && tipo_bulto.length > 0 && num_bulto.length > 0 && peso_real > 0 && empaquetado.length > 0 && descripcion.length > 0) {
+    if (cod_origen.length > 0 && cod_destino >0 && fecha.length>0 && valor.length>0 && tipo_bulto.length>0 &&  num_bulto.length>0 &&peso_real>0 && empaquetado.length>0 && descripcion.length>0) {
 
         _("multiphase").method = "post";
-        _("multiphase").action = "guardar-guia.php" /*"my_parser.php";*/
+        _("multiphase").action = "guardar-guia.php"/*"my_parser.php";*/
         _("multiphase").submit();
-    } else {
+      } else {
         alert("Todos los datos son obligatorios");
-    }
+      }
 }
 
 function submitForm() {
@@ -143,7 +142,6 @@ function cantidad() {
     var cantidad = document.querySelectorAll('.cantidad');
     var precio = document.querySelectorAll('.precio');
     var total = document.querySelectorAll('.total');
-
     var cantTotal = 0;
 
     if ((cantidad || precio) != "") {
@@ -151,10 +149,10 @@ function cantidad() {
             total[i].value = (cantidad[i].value * precio[i].value);
             cantTotal = (cantTotal == null || cantTotal == undefined || cantTotal == "") ? 0 : cantTotal;
             cantTotal = Number(total[i].value) + Number(parseFloat(cantTotal));
-            var rounded = Math.round((cantTotal + Number.EPSILON) * 100) / 100;
         }
-        document.getElementById('resultado').innerText = rounded
-        document.getElementById('totalDeclarado').value = rounded
+        document.getElementById('resultado').innerText = cantTotal
+        document.getElementById('totalDeclarado').value= cantTotal
+
     }
 }
 
@@ -178,8 +176,8 @@ $(document).ready(function() {
     });
 });
 
-function imprimir(imp1) { // función para iprimir solo un cóntenido dentro de una pag (en este caso pra la factura))
-
+function imprimir(imp1){  // función para iprimir solo un cóntenido dentro de una pag (en este caso pra la factura))
+    
     var printContents = document.getElementById('imp1').innerHTML;
     w = window.open();
     w.document.write(printContents);
@@ -188,4 +186,4 @@ function imprimir(imp1) { // función para iprimir solo un cóntenido dentro de 
     w.print();
     w.close();
     return true;
-}
+    }  
