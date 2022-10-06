@@ -12,14 +12,14 @@ include_once("includes/footer.php");
         $passwordNueva = $_POST['pass-nueva'];
         $passwordConfirm = $_POST['pass-confirm'];
 
-       $query = "SELECT pass FROM usuario WHERE id_usuario = '".$_SESSION['id_usuario']."'";
+       $query = "SELECT pass FROM users WHERE id_user = '".$_SESSION['id']."'";
        $resultado = mysqli_query($conexion, $query);
 
        $row = mysqli_fetch_array($resultado);
        if($row['pass'] == $passwordActual){
            //si coincide
            if($passwordNueva == $passwordConfirm){
-            $update = "UPDATE usuario SET pass = '$passwordNueva' WHERE id_usuario = '".$_SESSION['id_usuario']."'";
+            $update = "UPDATE users SET pass = '$passwordNueva' WHERE id_user = '".$_SESSION['id']."'";
             $result = mysqli_query($conexion, $update);
             if($update){
                 $_SESSION['message'] = 'Contraseña actualizada';
@@ -53,7 +53,7 @@ include_once("includes/footer.php");
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-12">
-    <h2>Cambiar Contraseña</h2>    
+    <h2>Cambiar contraseña</h2>    
   </div>
 </div>
 <div class="col-md-6 div-form">

@@ -15,7 +15,7 @@ include_once("includes/footer.php");
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-12">
-    <h2>Perfil usuario <?php echo $_SESSION["nombre_usuario"]; ?></h2>    
+    <h2>Perfil usuario <?php echo $_SESSION["usuario"]; ?></h2>    
   </div>
 </div>
 
@@ -26,15 +26,15 @@ include_once("includes/footer.php");
         </div>
         <?php
       
-        $id = $_SESSION['id_usuario'];
-        $query = "SELECT * FROM usuario WHERE id_usuario = '$id'";
+        $id = $_SESSION['id'];
+        $query = "SELECT * FROM users WHERE id_user = '$id'";
         $result = mysqli_query($conexion, $query);
 
         //recorrer tabla
          while($row = mysqli_fetch_array($result)){ ?>
         <div class="col-md-6">
             <?php echo "<img src='".$row['imagen']."' width='250px'>"; ?>
-             <a class="btn btn-secondary" href="editar-perfil.php?id=<?php echo $row['id_usuario']; ?>"><i class="bi bi-pencil-fill"></i></a>
+             <a class="btn btn-secondary" href="editar-perfil.php?id=<?php echo $row['id_user']; ?>"><i class="bi bi-pencil-fill"></i></a>
         </div>
     
         <?php } ?>
