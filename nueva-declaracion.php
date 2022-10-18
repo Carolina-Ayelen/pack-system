@@ -446,252 +446,392 @@ if (isset($_GET['id'])) {
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion23" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn23" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant23" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt23" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio23" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo23" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total23" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall23" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion24" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn24" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant24"type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt24"type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio24" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo24" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total24" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall24" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion5" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn25" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant5" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt25" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio5" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo25" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total5" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall25" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion6" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn26" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant6" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt26" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio6" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo26" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total6" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall26" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion7" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn27" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant7" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt27" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio7" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo27" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input  name="total7" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input  name="totall27" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion8" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn28" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant8" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt28" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio8" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo28" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total8" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall28" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion9" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn29" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant9" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt29" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio9" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo29" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total9" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall29" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion10" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn30" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant10" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt30" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio10" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo30" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total10" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall30" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn31" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt31" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo31" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall31" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input  name="descripcion11" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input  name="descripcionn32" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input  name="cant11" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt32" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio11" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo32" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total11" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall32" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input  name="descripcion12" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn33" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant12" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt33" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio12" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo33" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total12" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall33" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion13" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn34" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant13" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt34"type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio13" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo34" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total13" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall34" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion14" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn35" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant14"type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt35" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio14" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo35" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total14" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall35" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion15" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn36" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant15" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt36" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio15" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo36" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total15" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall36" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion16" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn37" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant16" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt37" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio16" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo37" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total16" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall37" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion17" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn38" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant17" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt38" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio17" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo38" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total17" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall38" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn39" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt39" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo39" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall39" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion18" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="descripcionn40" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant18" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt40" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio18" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo40" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total18" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
-                </div>
-            <div class="row ">
-                <div class="col-md-4 field_wrapper">
-                    <input name="descripcion19" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
-                </div>
-                <div class="col-md-2 field_wrapper">
-                    <input name="cant19" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
-                </div>
-                <div class="col-md-2 field_wrapper">
-                    <input name="precio19" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
-                </div>
-                <div class="col-md-2 field_wrapper">
-                    <input name="total19" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall40" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
             <div class="row ">
                 <div class="col-md-4 field_wrapper">
-                    <input name="descripcion20" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input  name="descripcionn41" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="cant20" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="cantt41" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="precio20" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                    <input name="precioo41" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
                 </div>
                 <div class="col-md-2 field_wrapper">
-                    <input name="total20" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                    <input name="totall41" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input  name="descripcionn42" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt42" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo42" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall42" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+             
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn43" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt43" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo43" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall43" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn44" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt44" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo44" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall44" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input  name="descripcionn45" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt45" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo45" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall45" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn46" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt46" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo46" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall46" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+            <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn47" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt47" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo47" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input  name="totall47" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+            <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn48" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt48" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo48" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall48" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn49" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt49" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo49" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall49" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-4 field_wrapper">
+                    <input name="descripcionn50" type="text" class="form-control descripcion" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="cantt50" type="number" class="form-control cantidad" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="precioo50" type="number" step="any" class="form-control precio" style="padding: 4px; border-radius: 0.3rem;" >
+                </div>
+                <div class="col-md-2 field_wrapper">
+                    <input name="totall50" type="number" step="any" class="form-control total" style="padding: 4px; border-radius: 0.3rem;"  onclick="cantidad();">
                 </div>
             </div>
         <!--<button onclick="declaracionPDF()">Generar PDF acá</button>-->
