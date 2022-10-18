@@ -303,8 +303,7 @@ if (isset($_GET['id_guia'])) {
 
 <br>
 <br>
-<?php echo $_GET['cant5'];
-?>
+
 <table class="collapse">
     <thead class="membretes">
         <tr>
@@ -431,6 +430,7 @@ if (isset($_GET['id_guia'])) {
         </tr>
         <?php  if (strlen($_GET['descripcionn19'])>0)
        { ?>
+
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt19'];?> </p></th>
             <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn19'];?></p></th>
@@ -438,53 +438,294 @@ if (isset($_GET['id_guia'])) {
             <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall19']>0) echo number_format( $_GET['totall19'],2,',','.');?></p> </th>
 
         </tr>
-
-
-
-
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn20'])>0)
+       { ?>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt20'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn21'];?></p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn20'];?></p></th>
             <th class="collapse"><p class="der"> <?php if ($_GET['totall20']>0) echo number_format($_GET['precioo20'],2,',','.' );?></p></th>
             <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall20']>0) echo number_format( $_GET['totall20'],2,',','.');?></p> </th>
         </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn21'])>0)
+       { ?>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt21'];?> </p></th>
             <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn21'];?></p></th>
             <th class="collapse"><p class="der"> <?php if ($_GET['totall21']>0) echo number_format($_GET['precioo21'],2,',','.' );?></p></th>
             <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall21']>0) echo number_format( $_GET['totall21'],2,',','.');?></p> </th>
         </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn24'])>0)
+       { ?>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt22'];?> </p></th>
             <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn22'];?></p></th>
             <th class="collapse"><p class="der"> <?php if ($_GET['totall22']>0) echo number_format($_GET['precioo22'],2,',','.' );?></p></th>
             <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall22']>0) echo number_format( $_GET['totall22'],2,',','.');?></p> </th>
         </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn23'])>0)
+       { ?>
         <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
-        </tr>
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
-        </tr>
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
-        </tr>
-        <tr>
-            <th class="collapse"><p> <?php echo $_GET['cant9'];?> </p></th>
-            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcion9'];?></p></th>
-            <th class="collapse"><p> <?php if ($_GET['total9']>0) echo number_format($_GET['precio9'],2,',','.' );?></p></th>
-            <th class="color_columna collapse"><p> <?php if  ($_GET['total9']>0) echo $_GET['total9'];?></p> </th>
+            <th class="collapse"><p> <?php echo $_GET['cantt23'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn23'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall23']>0) echo number_format($_GET['precioo23'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall23']>0) echo number_format( $_GET['totall23'],2,',','.');?></p> </th>
         </tr>
         <?php }?>
+        <?php  if (strlen($_GET['descripcionn24'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt24'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn24'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall24']>0) echo number_format($_GET['precioo24'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall24']>0)echo number_format( $_GET['totall24'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn25'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt25'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn25'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall25']>0) echo number_format($_GET['precioo25'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall25']>0) echo number_format( $_GET['totall25'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn26'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt26'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn26'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall26']>0) echo number_format($_GET['precioo26'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall26']>0) echo number_format( $_GET['totall26'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn27'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt27'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn27'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall27']>0) echo number_format($_GET['precioo27'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall27']>0) echo number_format( $_GET['totall27'],2,',','.');?></p> </th>
+        </tr>
+
+
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn28'])>0)
+       { ?>
+
+            <tr>
+                <th class="collapse"><p> <?php echo $_GET['cantt28'];?> </p></th>
+                <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn28'];?></p></th>
+                <th class="collapse"><p class="der"> <?php if ($_GET['totall28']>0) echo number_format($_GET['precioo28'],2,',','.' );?></p></th>
+                <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall28']>0) echo number_format( $_GET['totall28'],2,',','.');?></p> </th>
+            </tr>
+
+        <?php }?>
+
+        <?php  if (strlen($_GET['descripcionn29'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt29'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn29'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall29']>0) echo number_format($_GET['precioo29'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall29']>0) echo number_format( $_GET['totall29'],2,',','.');?></p> </th>
+        </tr>
+
+        <?php }?>
+        
+        <?php  if (strlen($_GET['descripcionn30'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt30'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn30'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall30']>0) echo number_format($_GET['precioo30'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall30']>0) echo number_format( $_GET['totall30'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn31'])>0)
+       { ?>
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt31'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn31'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall31']>0) echo number_format($_GET['precioo31'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall31']>0) echo number_format( $_GET['totall31'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn32'])>0)
+       { ?>     
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt32'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn32'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall32']>0) echo number_format($_GET['precioo32'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall32']>0) echo number_format( $_GET['totall32'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn33'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt33'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn33'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall33']>0) echo number_format($_GET['precioo33'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall33']>0) echo number_format( $_GET['totall33'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn34'])>0)
+       { ?>  
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt34'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn34'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall34']>0) echo number_format($_GET['precioo34'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall34']>0) echo number_format( $_GET['totall34'],2,',','.');?></p> </th>
+        </tr>        
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn35'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt35'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn35'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall35']>0) echo number_format($_GET['precioo35'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall35']>0) echo number_format( $_GET['totall35'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn36'])>0)
+       { ?>         
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt36'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn36'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall36']>0) echo number_format($_GET['precioo36'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall36']>0) echo number_format( $_GET['totall36'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn37'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt37'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn37'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall37']>0) echo number_format($_GET['precioo37'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall37']>0) echo number_format( $_GET['totall37'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn38'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt38'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn38'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall38']>0) echo number_format($_GET['precioo38'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall38']>0) echo number_format( $_GET['totall38'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn39'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt39'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn39'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall39']>0) echo number_format($_GET['precioo39'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall39']>0) echo number_format( $_GET['totall39'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn40'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt40'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn40'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall40']>0) echo number_format($_GET['precioo40'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall40']>0) echo number_format( $_GET['totall40'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn41'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt41'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn41'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall41']>0) echo number_format($_GET['precioo41'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall41']>0) echo number_format( $_GET['totall41'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn42'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt42'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn42'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall42']>0) echo number_format($_GET['precioo42'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall42']>0) echo number_format( $_GET['totall42'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn43'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt43'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn43'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall43']>0) echo number_format($_GET['precioo43'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall43']>0) echo number_format( $_GET['totall43'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn44'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt44'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn44'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall44']>0) echo number_format($_GET['precioo44'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall44']>0) echo number_format( $_GET['totall44'],2,',','.');?></p> </th>
+        </tr>    
+          <?php }?>
+          <?php  if (strlen($_GET['descripcionn45'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt45'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn45'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall45']>0) echo number_format($_GET['precioo45'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall45']>0) echo number_format( $_GET['totall45'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn46'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt46'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn46'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall46']>0) echo number_format($_GET['precioo46'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall46']>0) echo number_format( $_GET['totall46'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn47'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt47'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn47'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall47']>0) echo number_format($_GET['precioo47'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall47']>0) echo number_format( $_GET['totall47'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn48'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt48'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn48'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall48']>0) echo number_format($_GET['precioo48'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall48']>0) echo number_format( $_GET['totall48'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn49'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt49'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn49'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall49']>0) echo number_format($_GET['precioo49'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall49']>0) echo number_format( $_GET['totall49'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+        <?php  if (strlen($_GET['descripcionn50'])>0)
+       { ?> 
+        <tr>
+            <th class="collapse"><p> <?php echo $_GET['cantt50'];?> </p></th>
+            <th class="collapse"><p class="izq"> <?php echo $_GET['descripcionn50'];?></p></th>
+            <th class="collapse"><p class="der"> <?php if ($_GET['totall40']>0) echo number_format($_GET['precioo50'],2,',','.' );?></p></th>
+            <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall50']>0) echo number_format( $_GET['totall50'],2,',','.');?></p> </th>
+        </tr>
+        <?php }?>
+    
         <tr>
             <td colspan= "2"  rowspan="4"> <p class="pieTabla"><strong>The exporter of the products covered by this document   declares that, except where otherwise clearly indicated, these products are of  URUGUAY,  preferential origin.  I/We hereby certify that the information on this invoice is true and correct and that the contents of this shipment are as stated above.</strong> </p>
             </td> 
