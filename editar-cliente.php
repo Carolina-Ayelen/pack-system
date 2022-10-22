@@ -99,7 +99,7 @@ include_once("includes/sidebar.php");
                     </div>
                     <div class="col-md-4 div-nuevo">
                     <label>Cod de origen</label>  <!--Llenado pais actual y todos -->
-                        <select name="pais" class="form-select" aria-label="Default select example">
+                        <select name="pais" class="form-select"  aria-label="Default select example" required>
                             
                         <?php
                         $query = "SELECT * FROM cod_pais ";

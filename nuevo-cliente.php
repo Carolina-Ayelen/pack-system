@@ -43,7 +43,7 @@ if(isset($_GET['regreso'])){
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="pais" class="col-sm-2 control-label">País</label>
-                        <select name="pais" class="form-select" aria-label="Default select example">
+                        <select name="pais" class="form-select" aria-label="Default select example" require>
                             <option value="0">Seleccione:</option>
                             <?php
                                 $query = "SELECT * FROM cod_pais";

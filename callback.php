@@ -1,5 +1,7 @@
 <?php
 include "conexion.php";
+include_once "includes/header.php";
+
 $valorSelect=$_POST["valorSelect"];//recojemos lo seleccionado
 
 $query = "SELECT * FROM personas where id_persona= $valorSelect";
