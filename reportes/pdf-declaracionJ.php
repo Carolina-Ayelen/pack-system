@@ -457,7 +457,7 @@ if (isset($_GET['id_guia'])) {
             <th class="color_columna collapse"><p class="der"> <?php if  ($_GET['totall21']>0) echo number_format( $_GET['totall21'],2,',','.');?></p> </th>
         </tr>
         <?php }?>
-        <?php  if (strlen($_GET['descripcionn24'])>0)
+        <?php  if (strlen($_GET['descripcionn22'])>0)
        { ?>
         <tr>
             <th class="collapse"><p> <?php echo $_GET['cantt22'];?> </p></th>
