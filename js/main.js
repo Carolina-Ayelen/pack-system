@@ -30,6 +30,7 @@ function datosremitente() { /*Datos remitente */
     remitente = _("remitente").value;
 
 }
+
 function processPhase1() { /*Datos remitente */
     remitente = _("remitente").value;
     if (remitente.length > 0) {
@@ -65,14 +66,14 @@ function processPhase3() {
     empaquetado = _("empaquetado").value;
     incotem = _("incotem").value;
     descripcion = _("descripcion").value;
-    if (cod_origen.length > 0 && cod_destino >0 && fecha.length>0 && valor.length>0 && tipo_bulto.length>0 &&  num_bulto.length>0 &&peso_real>0 && empaquetado.length>0 && descripcion.length>0) {
+    if (cod_origen.length > 0 && cod_destino > 0 && fecha.length > 0 && valor.length > 0 && tipo_bulto.length > 0 && num_bulto.length > 0 && peso_real > 0 && empaquetado.length > 0 && descripcion.length > 0) {
 
         _("multiphase").method = "post";
-        _("multiphase").action = "guardar-guia.php"/*"my_parser.php";*/
+        _("multiphase").action = "guardar-guia.php" /*"my_parser.php";*/
         _("multiphase").submit();
-      } else {
+    } else {
         alert("Todos los datos son obligatorios");
-      }
+    }
 }
 
 function submitForm() {
@@ -150,8 +151,8 @@ function cantidad() {
             cantTotal = (cantTotal == null || cantTotal == undefined || cantTotal == "") ? 0 : cantTotal;
             cantTotal = Number(total[i].value) + Number(parseFloat(cantTotal));
         }
-        document.getElementById('resultado').innerText = cantTotal
-        document.getElementById('totalDeclarado').value= cantTotal
+        document.getElementById('resultado').innerText = cantTotal.toFixed(2)
+        document.getElementById('totalDeclarado').value = cantTotal.toFixed(2)
 
     }
 }
@@ -176,8 +177,8 @@ $(document).ready(function() {
     });
 });
 
-function imprimir(imp1){  // función para iprimir solo un cóntenido dentro de una pag (en este caso pra la factura))
-    
+function imprimir(imp1) { // función para iprimir solo un cóntenido dentro de una pag (en este caso pra la factura))
+
     var printContents = document.getElementById('imp1').innerHTML;
     w = window.open();
     w.document.write(printContents);
@@ -186,4 +187,4 @@ function imprimir(imp1){  // función para iprimir solo un cóntenido dentro de 
     w.print();
     w.close();
     return true;
-    }  
+}
