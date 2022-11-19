@@ -2,13 +2,14 @@
 function AlertIt(id_manifiesto) {
 
 
-let guiaAWB=prompt('Introduzca el número de manifiesto:')   
-console.log (id_manifiesto)   
+  let guiaAWB=prompt('Introduzca el número de manifiesto:')   
 
-//window.location ='editar-numero-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB
 
+ 
 var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
+
 win.focus();
+//window.location.reload()  
 }
 </script>
 
@@ -41,7 +42,7 @@ $where = "AND id_manifiesto LIKE '%$valor%' ";
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de manifiesto</h2>
+    <h2>Manifiestos Cerrados</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
@@ -94,9 +95,11 @@ while ($row = mysqli_fetch_array($result)) {?>
               while($rowOrigen = $resultadoOrigen->fetch_assoc())
               { ?>
                 <td><?php echo $rowOrigen['codigo']; ?></td>  
-             <?php }
+             <?php  }
+             $fecha= strtotime($row['fecha']);
+             $newdate= date("d-m-Y",$fecha);
               ?>
-              <td><?php echo $row['fecha']; ?></td>
+              <td><?php echo $newdate ?></td>
               <td><?php echo $row['vuelo']; ?></td>
               <td><?php echo $row['electronico']; ?></td>
               <td>   

@@ -19,9 +19,11 @@ include "conexion.php";
     $destinatario = $_POST['destinatario'];
     $remitente = $_POST['remitente'];
     $descripcion = $_POST['descripcion'];
+    $electronico= $_POST['electronico'];
+    
 
     //insertar valores en tabla
-    $query = "INSERT INTO guia_embarque(cod_origen, cod_destino, fecha_emb, valor_mercancia, peso_real, tipo_bulto, cantidad_bulto,descripcion, empaquetado, peso_volumetrico, incotem, personasEnv_id, personasDest_id) VALUES ('$cod_origen', '$cod_destino', '$fecha', '$valor', '$peso_real', '$tipo_bulto','$num_bulto', '$descripcion', '$empaquetado', '$peso_volumetrico', '$icontem', '$remitente', '$destinatario')";
+    $query = "INSERT INTO guia_embarque(cod_origen, cod_destino, fecha_emb, valor_mercancia, peso_real, tipo_bulto, cantidad_bulto,descripcion, empaquetado, peso_volumetrico, incotem, electronico, personasEnv_id, personasDest_id) VALUES ('$cod_origen', '$cod_destino', '$fecha', '$valor', '$peso_real', '$tipo_bulto','$num_bulto', '$descripcion', '$empaquetado', '$peso_volumetrico', '$icontem','$electronico', '$remitente', '$destinatario')";
     //almacenar valores
     $resultado = mysqli_query($conexion, $query);
 
@@ -37,7 +39,7 @@ include "conexion.php";
 
         $_SESSION['message'] = 'Guia guardada';
         $_SESSION['message-type'] = 'success';
-        echo 'guia aguardada';
+        
         header("Location: nueva-declaracion.php?id=$guia");
         }
     }

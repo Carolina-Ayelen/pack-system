@@ -82,11 +82,11 @@ include_once("includes/sidebar.php");
                         <input type="text" name="dni" id="dni" class='form-control' maxlength="50" required value="<?php echo $dni; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
-                        <label>Nombre</label>
+                        <label>Nombres</label>
                         <input type="text" name="nombre" id="nombre" class='form-control' maxlength="50" required value="<?php echo $nombre; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
-                        <label>Nombre</label>
+                        <label>Apellidos</label>
                         <input type="text" name="apellidos" id="apellidos" class='form-control' maxlength="50" required value="<?php echo $apellidos; ?>"></input>
                     </div>
 
@@ -126,7 +126,7 @@ include_once("includes/sidebar.php");
                 <div class="row">
                     <div class="col-md-4 div-nuevo">
                         <label>Cód Postal</label>
-                        <input type="text" name="cod_postal" id="cod_postal" class='form-control' maxlength="50"  value="<?php echo $cod_postal; ?>"></input>
+                        <input type="text" name="cod_postal" id="cod_postal" class='form-control' maxlength="50" required  value="<?php echo $cod_postal; ?>"></input>
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label>Teléfono</label>
@@ -147,7 +147,7 @@ include_once("includes/sidebar.php");
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button"  class="btn btn-dark boton-secundario"><a href="gestion.php">Regresar</a></button>
+                        <button type="button"  class="btn btn-dark boton-secundario"> <?php  if ($regreso=="remitente") {?> <a href="multi_embarque.php" ><?php } else  {?> <a href="gestion.php" ><?php }?>  Regresar</a>  </button>
                         <button type="submit" name="update" class="btn btn-primary">Modificar</button>
                 </div>
             </div>

@@ -18,7 +18,7 @@ if (empty($usuarioCorrecto) || empty($passwordCorrecto)) {
             $_SESSION['pass'] = $passwordCorrecto;
             $_SESSION['roll'] = $row['roll'];
 
-            header("Location: gestion.php");
+            header("Location: guia.php");
         }
 
     } else {

@@ -27,7 +27,8 @@ $where = "";
 if (isset($_POST["enviar-nombre"])) {
 $valor = $_POST['campo'];
 if (!empty($valor)) {
-$where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR personasDest_id LIKE '%$valor%'";
+  
+$where = " ( nombre LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR apellidos LIKE '%$valor%') AND";
 }
 }
  
@@ -76,7 +77,8 @@ $where = "AND personasEnv_id LIKE '%$valor%' OR id_guia LIKE '%$valor%' OR perso
       <tbody>
         <?php
 
-$query = "SELECT * FROM guia_embarque WHERE estado_id= 1 OR estado_id=2 $where " ;
+
+$query = "SELECT distinct id_guia, personasEnv_id,cod_destino,personasDest_id, tipo_bulto, fecha_emb, cantidad_bulto, peso_real, empaquetado,numero FROM guia_embarque  INNER JOIN PERSONAS ON   guia_embarque.personasEnv_id= personas.id_persona  OR guia_embarque.personasDest_id= personas.id_persona WHERE $where (estado_id= 1 OR estado_id=2)  " ;
 $result = mysqli_query($conexion, $query);
 
 //recorrer tabla
@@ -115,7 +117,7 @@ while ($row = mysqli_fetch_array($result)) {?>
               ?>
               <td><?php echo $row['fecha_emb']; ?></td> <?php $tipo= $row['tipo_bulto'];?>
               <td><?php echo $row['cantidad_bulto']; ?></td>
-              <td><?php echo $row['peso_volumetrico']; ?></td>
+              <td><?php echo $row['peso_real']; ?></td>
               <!-- <td><?php echo $row['empaquetado']; ?></td>-->
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-pencil-fill"></i></a>
                   <a class="btn btn-danger" data-toggle="popover" title="Eliminar" onclick="return  confirm('¿Desea eliminar el registro?')"href="eliminar-guia.php?id=<?php echo $row['id_guia']; ?>"><i class="bi bi-trash-fill" ></i></a>

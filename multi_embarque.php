@@ -167,11 +167,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" >
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;"  onkeypress ="calcular();"  >
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;"  onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;">
                                         </div>
                                     </div>
                                     <br>
@@ -189,11 +189,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" >
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -211,11 +211,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -233,11 +233,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -247,7 +247,7 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Alto(cm)</label>
-                                            <input type="number" step="any" class="form-control alto" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control alto" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Ancho(cm)</label>
@@ -255,11 +255,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -277,11 +277,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -299,11 +299,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -321,11 +321,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -343,11 +343,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any" class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                     <br>
@@ -365,11 +365,11 @@ include_once "includes/footer.php";
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Largo(cm)</label>
-                                            <input type="number" step="any"  class="form-control largo" style="padding: 4px; border-radius: 0.3rem;">
+                                            <input type="number" step="any"  class="form-control largo" style="padding: 4px; border-radius: 0.3rem;" onkeypress ="calcular();">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="">Volumen(cm3)</label>
-                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" onclick="calcular();">
+                                            <input type="number" step="any" class="form-control volumen" style="padding: 4px; border-radius: 0.3rem;" >
                                         </div>
                                     </div>
                                 </div>
@@ -436,6 +436,13 @@ include_once "includes/footer.php";
                         <option value="Documentos">Documentos</option>
                     </select>
                     </div>
+                    <div class="col-md-4 div-nuevo">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        electronico
+                        </label>  <!--OJO preguntar por el id="propio (para que se usa?)" -->
+                        <input type="radio" id="electronico" name="electronico" value="SI" checked> SI
+                        <input type="radio" id="electronico" name="electronico" value="NO"> NO
+                    </div>
                 </div>
                 <button type="button" class="btn btn-secondary" onclick="procesoAtras1()">Anterior</button>
                 <button type="button" class="btn btn-success" onclick="processPhase3()">Continue</button>
@@ -453,6 +460,7 @@ include_once "includes/footer.php";
                 empaquetado:<span id="display_empaquetado"></span> <br />
                 incotem:<span id="display_incotem"></span> <br />
                 descripcion:<span id="display_descripcion"></span> <br />
+                electronico:<span id="display_electronico"></span> <br/>
                 <button onclick="procesoAtras2()">Anterior</button> 
                 <button name= "generar-guia" onclick="submitForm()" class="btn btn-primary">Generar Guía</button>
             </div>

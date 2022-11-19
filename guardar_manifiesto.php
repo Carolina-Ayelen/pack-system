@@ -10,7 +10,7 @@ if(isset($_POST['manifiesto'])){//Validacion de envio de formulario
         $fecha='2022-02-14';
         $cod_origen=$_POST['cod_origen'];
         $cod_destino=$_POST['cod_destino'];
-        $query = "INSERT INTO manifiesto(fecha,vuelo,cod_origen,cod_destino, expedidor, consignatario ) VALUES ('$fecha','$vuelo','$cod_origen','$cod_destino', '$expedidor', '$consignatario')";
+        $query = "INSERT INTO manifiesto(vuelo,cod_origen,cod_destino, expedidor, consignatario ) VALUES ('$vuelo','$cod_origen','$cod_destino', '$expedidor', '$consignatario')";
         $resultado = mysqli_query($conexion, $query);  
 
         if(!$resultado){

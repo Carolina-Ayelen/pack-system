@@ -1,13 +1,22 @@
 <script type="text/javascript">
 function AlertIt(id_manifiesto) {
 
+  let guiaAWB=prompt('Introduzca el número de manifiesto:')  
+  
+  var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
+  win.focus();
+}
+function AlertAutorizacion(id_manifiesto) {
 
-let guiaAWB=prompt('Introduzca el número de manifiesto:')   
-
-
-     
-var win = window.open('reportes/pdf-manifiesto.php?id_manifiesto='+id_manifiesto+"&" + "guiaAWB=" + guiaAWB, '_blank')
-win.focus();
+  let clave=prompt('Introduzca la clave de seguridad:')   
+  if (clave==='Pack2022'){ 
+    
+    var win = window.open('cerrar-manifiesto.php?id_manifiesto='+id_manifiesto, '_self')
+    win.focus();
+  }
+  else { 
+  alert("Clave incorrecta, No está autorizado para cerrar manifiesto")
+  }
 }
 </script>
 
@@ -40,7 +49,7 @@ $where = "AND id_manifiesto LIKE '%$valor%'";
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-6">
-    <h2>Guías de Manifiesto</h2>
+    <h2>Manifiestos Abiertos</h2>
   </div>
   <div class="col-md-6">
     <form action="<?php $_SERVER['PHP_SELF'];?>" method="POST">
@@ -94,8 +103,10 @@ while ($row = mysqli_fetch_array($result)) {?>
               { ?>
                 <td><?php echo $rowOrigen['codigo']; ?></td>  
              <?php }
+              $fecha= strtotime($row['fecha']);
+              $newdate= date("d-m-Y",$fecha);
               ?>
-              <td><?php echo $row['fecha']; ?></td>
+              <td><?php echo $newdate;  ?></td>
               <td><?php echo $row['vuelo']; ?></td>
               <td><?php echo $row['electronico']; ?></td>
               <td><a class="btn btn-secondary" data-toggle="popover" title="Editar" href="editar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-pencil-fill"></i></a>
@@ -113,7 +124,7 @@ while ($row = mysqli_fetch_array($result)) {?>
 
 
                   <?php if ($_SESSION['nombre_usuario'] === 'desarrollo'){?>   
-                    <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="cerrar-manifiesto.php?id_manifiesto=<?php echo $row['id_manifiesto']; ?>"><i class="bi bi-x-square-fill"></i></a>
+                    <a class="btn btn-secondary" data-toggle="popover" title="Cerrar" href="javascript:AlertAutorizacion(<?php echo $row['id_manifiesto'];?>);"><i class="bi bi-x-square-fill"></i></a>
                   <?php } ?>
               </td>
           </tr>
@@ -126,7 +137,6 @@ while ($row = mysqli_fetch_array($result)) {?>
 </div>
 </div>
 <script 
-     alert("hola");
-     
+          
      src="js/main.js">
     </script>

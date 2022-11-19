@@ -64,7 +64,7 @@ if(isset($_GET['regreso'])){
                 <div class="row">
                     <div class="col-md-4 div-nuevo">
                         <label for="cod_postal" class="col-sm-8 control-label">Cód Postal</label>
-                        <input type="text" class="form-control" id="cod_postal" name="cod_postal">
+                        <input type="text" class="form-control" id="cod_postal" name="cod_postal" required                                                                                                                                                                                                                                                              >
                     </div>
                     <div class="col-md-4 div-nuevo">
                         <label for="telefono" class="col-sm-2 control-label">Teléfono</label>
@@ -81,8 +81,8 @@ if(isset($_GET['regreso'])){
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
-                        <button type="button" class="btn btn-dark boton-secundario"><a href="gestion.php">Regresar</a></button>
-                        <button type="submit" name= "guardar_cliente" class="btn btn-primary">Guardar</button>
+                    <button type="button"  class="btn btn-dark boton-secundario"> <?php  if ($regreso=="remitente") {?> <a href="multi_embarque.php" ><?php } else  {?> <a href="gestion.php" ><?php }?>  Regresar</a>  </button>
+                    <button type="submit" name= "guardar_cliente" class="btn btn-primary">Guardar</button>
                 </div>
             </div>
         </form>

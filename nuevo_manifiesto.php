@@ -13,10 +13,12 @@ $where = "";
 if (isset($_POST["enviar-pais"])) {
   $cod_origen = $_POST['cod_origen'];
   $cod_destino = $_POST['cod_destino'];
-  if (!empty($cod_origen) and !empty($cod_destino)) { // es OBLIGARORIO que selecciones un origen Y destino
-   // $where = "WHERE cod_origen LIKE '%$cod_origen%' and cod_destino LIKE '%$cod_destino%' and estado_id='1' GROUP BY electronico";
-    $where = "WHERE cod_origen ='$cod_origen' and cod_destino ='$cod_destino' and estado_id='1' ORDER BY electronico";
-
+  $tipo= $_POST['tipo'];
+  if (!empty($cod_origen) and !empty($cod_destino) and (!empty($tipo)) ) { // es OBLIGARORIO que selecciones un origen Y destino
+    
+    // $where = "WHERE cod_origen LIKE '%$cod_origen%' and cod_destino LIKE '%$cod_destino%' and estado_id='1' GROUP BY electronico";
+    $where = "WHERE (cod_origen ='$cod_origen' and cod_destino ='$cod_destino' and estado_id=1 and electronico='$tipo')   ORDER BY electronico";
+    
   }
   /*if (!empty($cod_origen) and empty($cod_destino)) {
       $where = "WHERE cod_origen LIKE '%$cod_origen%'";
@@ -39,7 +41,7 @@ if (isset($_POST["enviar-pais"])) {
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <div class="col-md-4">
-    <h3>Guías de Manifiesto </h3>
+    <h3>Selección de Guías</h3>
   </div>
 
   <div class="col-md-8">
@@ -71,6 +73,14 @@ if (isset($_POST["enviar-pais"])) {
                     ?>
                 </select>
         </div>
+        
+        <div class="form-outline">
+        <br>
+        <label>Electrónico</label> 
+          <input  type="radio" id= "tipo" name="tipo"  value="SI" <?php echo 'checked';?>> SI</input>
+          <input type="radio" id= "tipo" name="tipo"  value="NO"> NO  </input>
+        </div>
+ 
         <button type="submit" class="btn btn-primary" name="enviar-pais" value="Buscar">
           <i class="bi bi-search"></i>
         </button>
@@ -174,7 +184,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
             </div>
           <div class="col-md-4 div-nuevo">
               <label>CONSIGNEE</label>
-              <input type="text" name="consignatario" id="consignatario" class='form-control' maxlength="25" required ></input>
+              <input type="text" name="consignatario" id="consignatario" class='form-control' maxlength="500" required ></input>
           </div>
         </div>
         <div class="row">
@@ -199,7 +209,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
 </div>
 </div>
 <script 
-     alert("hola");
+     
      
      src="js/main.js">
     </script>

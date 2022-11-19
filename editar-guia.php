@@ -25,7 +25,12 @@ if (isset($_GET['id'])) {
         $destinatario = $row['personasDest_id'];
         $remitente = $row['personasEnv_id'];
         $descripcion = $row['descripcion'];
-    }
+        $electronico =$row['electronico'];
+        $EditElectronico="SI";
+      
+       
+     }
+
 
 }
 //actualizar datos
@@ -48,8 +53,9 @@ if (isset($_POST['update'])) {
     $destinatario = $_POST['destinatario'];
     $remitente = $_POST['remitente'];
     $descripcion = $_POST['descripcion'];
+    $electronico=$_POST['electronico'];
 
-    $query = "UPDATE guia_embarque set numero = '$numero', peso_real = '$peso_real', cod_origen='$cod_origen',cod_destino='$cod_destino', fecha_emb='$fecha', valor_mercancia='$valor', tipo_bulto='$tipo_bulto', cantidad_bulto='$num_bulto', empaquetado='$empaquetado', peso_volumetrico='$peso_volumetrico', incotem = '$icontem', personasDest_id ='$destinatario', personasEnv_id = '$remitente', descripcion = '$descripcion'  WHERE id_guia = $id";
+    $query = "UPDATE guia_embarque set numero = '$numero', peso_real = '$peso_real', cod_origen='$cod_origen',cod_destino='$cod_destino', fecha_emb='$fecha', valor_mercancia='$valor', tipo_bulto='$tipo_bulto', cantidad_bulto='$num_bulto', empaquetado='$empaquetado', peso_volumetrico='$peso_volumetrico', incotem = '$icontem', personasDest_id ='$destinatario', personasEnv_id = '$remitente', descripcion = '$descripcion' , electronico='$electronico' WHERE id_guia = $id";
     mysqli_query($conexion, $query);
     if (!$resultado) {
         die("Query failed");
@@ -242,6 +248,26 @@ include_once "includes/sidebar.php";
                             <option value="Medicamentos">Medicamentos</option>
                             <option value="Documentos">Documentos</option>
                         </select>
+                    </div>
+
+                    <div class="col-md-4 div-nuevo">
+    <?php  $querys= "SELECT guia_id,manifiesto_id FROM manif_embarq WHERE guia_id = $guia";
+     $result = mysqli_query($conexion, $querys);
+      if (mysqli_num_rows($result) == 1) {
+         $EditElectronico="NO";
+           
+     } ?>
+                        <label>Electrónico</label>
+                        <?php if ($EditElectronico=="SI"){ ?>
+                            
+                            <input type="radio" id= "electronico" name="electronico"  value="SI" <?php if($electronico=='SI') {echo 'checked';} ?>> SI</input>
+                            <input type="radio" id= "electronico" name="electronico"  value="NO" <?php if($electronico=='NO') {echo 'checked';} ?>> NO</input>
+                        <?php } 
+                        else { ?>
+                            <input type="radio" id= "electronico" name="electronico"  value="SI" <?php if($electronico=='SI') {echo 'checked disabled';} ?>> SI</input>
+                            <input type="radio" id= "electronico" name="electronico"  value="NO" <?php if($electronico=='NO') {echo 'checked disabled';} ?>> NO</input>
+                        <?php } ?>
+
                     </div>
                 </div>
         </div>
