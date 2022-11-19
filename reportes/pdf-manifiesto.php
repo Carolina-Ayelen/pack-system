@@ -393,7 +393,7 @@ if (isset($_GET['id_manifiesto'])) {
                 $tipo_bulto = $row['tipo_bulto'];
                 $num_bulto = $row['cantidad_bulto'];
                 $empaquetado = $row['empaquetado'];
-                $peso_volumetrico = $row['peso_volumetrico'];
+                $peso_real = $row['peso_real'];
                 $icontem = $row['incotem'];
                 $destinatario = $row['personasDest_id'];
                 $remitente = $row['personasEnv_id'];
@@ -452,7 +452,7 @@ if (isset($_GET['id_manifiesto'])) {
                     </th>
                     <th class="collapse pequeno"><p> <?php echo "DDU (Prepaid)";?> </p></th>
                     <th class="collapse pequeno"><p> <?php echo $num_bulto;?> </p></th>
-                    <th class="collapse pequeno"><p> <?php echo $peso_volumetrico;?> </p></th>
+                    <th class="collapse pequeno"><p> <?php echo $peso_real;?> </p></th>
                     <th class="collapse pequeno"><p> <?php echo $valor;?> </p></th>
                     <th class="collapse interlineado_detalles pequeno"><p> <?php echo $descripcion; ?> <br></p></th>
 
