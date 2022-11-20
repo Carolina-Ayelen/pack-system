@@ -156,7 +156,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
               ?>
               <td><?php echo $row['fecha_emb']; ?></td>
               <td><?php echo $row['cantidad_bulto']; ?></td>
-              <td><?php echo $row['peso_volumetrico']; ?></td>
+              <td><?php echo $row['peso_real']; ?></td>
               <td><?php echo $row['electronico']; ?></td>
 
           </tr>
