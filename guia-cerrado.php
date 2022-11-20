@@ -111,7 +111,7 @@ while ($row = mysqli_fetch_array($result)) {?>
               ?>
               <td><?php echo $row['fecha_emb']; ?></td>
               <td><?php echo $row['cantidad_bulto']; ?></td>
-              <td><?php echo $row['peso_volumetrico']; ?></td>
+              <td><?php echo $row['peso_real']; ?></td>
               <!-- <td><?php echo $row['empaquetado']; ?></td>-->
               <td>
                   <?php 
