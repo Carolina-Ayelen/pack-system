@@ -67,13 +67,13 @@ function processPhase3() {
     incotem = _("incotem").value;
     descripcion = _("descripcion").value;
     electronico = _("electronico").value;
-    if (cod_origen.length > 0 && cod_destino > 0 && fecha.length > 0 && valor.length > 0 && tipo_bulto.length > 0 && num_bulto.length > 0 && peso_real > 0 && empaquetado.length > 0 && descripcion.length > 0 && electronico > 0) {
+    if (cod_origen.length > 0 && cod_destino > 0 && fecha.length > 0 &&   valor.length >= 0 &&  tipo_bulto.length > 0 && num_bulto.length > 0 && peso_real > 0 && empaquetado.length > 0 && descripcion.length > 0 && electronico.length > 0) {
 
         _("multiphase").method = "post";
         _("multiphase").action = "guardar-guia.php" /*"my_parser.php";*/
         _("multiphase").submit();
     } else {
-        alert("Todos los datos son obligatorios");
+        alert("Todos los campos son obligatorios");
     }
 }
 
