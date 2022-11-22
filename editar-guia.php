@@ -264,9 +264,18 @@ include_once "includes/sidebar.php";
                             <input type="radio" id= "electronico" name="electronico"  value="NO" <?php if($electronico=='NO') {echo 'checked';} ?>> NO</input>
                         <?php } 
                         else { ?>
-                            <input type="radio" id= "electronico" name="electronico"  value="SI" <?php if($electronico=='SI') {echo 'checked disabled';} ?>> SI</input>
-                            <input type="radio" id= "electronico" name="electronico"  value="NO" <?php if($electronico=='NO') {echo 'checked disabled';} ?>> NO</input>
-                        <?php } ?>
+                        <?php if($electronico=='SI') {?>
+                            <input type="hidden" id="eletronico" name="electronico"   value=<?php echo $electronico ?> >
+                            <input type="radio" id= "electronicoo" name="electronicoo"  value="SI"  <?php  echo 'checked disabled';?>> SI</input>
+                            <input type="radio" id= "electronicoo" name="electronicoo"  value="NO" <?php echo 'disabled'; ?>> NO</input>
+                        
+                        <?php }
+                         if($electronico=='NO') {?>
+                            <input type="hidden" id="eletronico" name="electronico"  value=<?php echo $electronico ?>>
+                            <input type="radio" id= "electronicoo" name="electronicoo"  value="SI"  <?php echo ' disabled'; ?>> SI</input>
+                            <input type="radio" id= "electronicoo" name="electronicoo"  value="NO"  <?php echo 'checked disabled'; ?>> NO</input>
+
+                            <?php } }?>
 
                     </div>
                 </div>

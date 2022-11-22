@@ -238,11 +238,11 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
         <div class="row">
         <div class="col-md-3 div-nuevo">
               <label>NÚMERO EXTERNO</label>
-              <input type="text" name="numero" id="numero" value=<?php echo $numero ?> class='form-control' maxlength="20" required ></input>
+              <input type="text" name="numero" id="numero" value=<?php echo $numero ?> class='form-control' maxlength="50" required ></input>
           </div>
           <div class="col-md-3 div-nuevo">
               <label>FLIGHT</label>
-              <input type="text" name="vuelo" id="vuelo" value=<?php echo $vuelo ?> class='form-control' maxlength="20" required ></input>
+              <input type="text" name="vuelo" id="vuelo" value=<?php echo $vuelo ?> class='form-control' maxlength="500" required ></input>
           </div>
           <div class="col-md-3 div-nuevo">
               <label>SHIPPER</label>

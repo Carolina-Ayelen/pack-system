@@ -10,7 +10,23 @@ if(isset($_POST['manifiesto'])){//Validacion de envio de formulario
         $fecha='2022-02-14';
         $cod_origen=$_POST['cod_origen'];
         $cod_destino=$_POST['cod_destino'];
-        $query = "INSERT INTO manifiesto(vuelo,cod_origen,cod_destino, expedidor, consignatario ) VALUES ('$vuelo','$cod_origen','$cod_destino', '$expedidor', '$consignatario')";
+
+        foreach($_POST['guia'] as $guia){ // Ciclo para mostrar las casillas checked checkbox. IMPORTANTE: asigna a la variable id_guia los distintos valores de las guia a incluir en el manifiesto
+            //echo $id_guia."</br>";// Imprime resultados
+            $query = "SELECT * FROM guia_embarque WHERE id_guia = $guia";
+            $resultado = mysqli_query($conexion, $query);
+        
+            if (mysqli_num_rows($resultado) == 1){
+                $rowTipo = mysqli_fetch_array($resultado);
+                $tipo=$rowTipo['electronico'];
+            } 
+
+            
+    
+        }
+
+
+        $query = "INSERT INTO manifiesto(vuelo,cod_origen,cod_destino, expedidor, consignatario, electronico ) VALUES ('$vuelo','$cod_origen','$cod_destino', '$expedidor', '$consignatario','$tipo')";
         $resultado = mysqli_query($conexion, $query);  
 
         if(!$resultado){

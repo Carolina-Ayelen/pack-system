@@ -170,7 +170,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
         <div class="row">
           <div class="col-md-4 div-nuevo">
               <label>FLIGHT</label>
-              <input type="text" name="vuelo" id="vuelo" class='form-control' maxlength="20" required ></input>
+              <input type="text" name="vuelo" id="vuelo" class='form-control' maxlength="50" required ></input>
           </div>
           <div class="col-md-4 div-nuevo">
               <label>SHIPPER</label>
