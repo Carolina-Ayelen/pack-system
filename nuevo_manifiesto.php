@@ -184,7 +184,7 @@ if (!empty($cod_origen) and !empty($cod_destino)) { ?>
             </div>
           <div class="col-md-4 div-nuevo">
               <label>CONSIGNEE</label>
-              <input type="text" name="consignatario" id="consignatario" class='form-control' maxlength="500" required ></input>
+              <textarea  rows="5" cols="50" name="consignatario" id="consignatario" class='form-control' required ></textarea >
           </div>
         </div>
         <div class="row">
